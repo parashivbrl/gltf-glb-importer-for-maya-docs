@@ -1,0 +1,80 @@
+site_name: glTF and glb importer for maya documentation
+site_url: https://parashivbrl.github.io/gltf-glb-importer-for-maya-docs/
+copyright: 2025 glTF/glb Importer for Maya
+
+nav:
+  - Home: index.md
+  - Supported Features: supported_features.md
+  - Dependencies Installation: dependencies_installation.md
+  - Plugin Installation: plugin_installation.md
+  - Importing the glTF/glb file: importing_gltf_glb_file.md
+  - File Type Specific Options: file_type_specific_options.md
+  - Material Settings: material_settings.md
+  - Geometry Options: geometry_options.md
+  - Image Extraction: image_extraction.md
+  - Animation Settings: animation_settings.md
+  - GLB/GLTF Menu: glb_gltf_menu.md
+  - Show Material Variants: show_material_variants.md
+  - Show Animation Clips: show_animation_clips.md
+  - Technical Details: technical_details.md
+  - Limitations and Known Issues: limitations.md
+  - Asset Compatibility and Workarounds: compatibility_and_workarounds.md
+  - FAQ: faq.md
+
+theme:
+  name: material
+  font:
+    text: Merriweather Sans
+    code: Red Hat Mono
+  palette:
+    # Dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
+
+    # Light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+  features:
+    - navigation.footer
+    - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/parashivbrl
+      name: Follow us on X
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/parashivamurthy-b-n
+      name: Connect on LinkedIn
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/Parashivamurthy#1667
+      name: Join our Discord community
+    - icon: fontawesome/brands/github
+      link: https://github.com/parashivbrl
+      name: View on GitHub
+  
+  generator: false
