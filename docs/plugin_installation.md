@@ -2,8 +2,13 @@
 
 ## Plugin Download
 
-- **Download** the `glbgltfimporter.zip` from the [GitHub releases page](https://github.com/gltf-io/gltf-glb-importer-for-maya/releases)
-- **Extract** the downloaded archive to a temporary location
+**Download** the `glbgltfimporter.zip` from any of the below links:
+
+  - [Gumroad page](https://gumroad.com/)
+  - [Artstation Marketplace](https://www.artstation.com/marketplace/game-dev/resources/dev-tools/scripts?section=trending&softwares=maya) 
+  - [Flipped Normals Marketplace](https://flippednormals.com/explore?tagIds=1&firstCategory=158&secondCategory=228)
+
+**Extract** the downloaded archive to a temporary location
 
 ---
 
