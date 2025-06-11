@@ -52,7 +52,7 @@ Controls how normals and shading are handled during import:
 
 - Maintains the intended shading as authored in the original model
 
-**Hard edges (Maya native)**
+**Harden edges**
 
 - Converts to Maya's hard edge shading
 
@@ -60,7 +60,7 @@ Controls how normals and shading are handled during import:
 
 - Useful for mechanical or architectural models
 
-**Soften edges (Maya native)**
+**Soften edges**
 
 - Applies Maya's soft edge shading
 

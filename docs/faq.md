@@ -8,9 +8,6 @@ The glTF/glb importer for Maya is a plugin that allows you to import glTF (GL Tr
 ### What versions of Maya are supported?
 The plugin supports various versions of Maya. Please check the [Dependencies Installation](dependencies_installation.md) page for specific version compatibility information.
 
-### Is this plugin free to use?
-Please refer to the [LICENSE](../LICENSE) file for licensing information and usage terms.
-
 ## Installation Questions
 
 ### Why am I getting installation errors?

@@ -24,6 +24,7 @@ The plugin supports the following Khronos and vendor extensions:
 | `KHR_lights_punctual` | Point, spot, and directional lights |
 | `KHR_materials_anisotropy` | Anisotropic material reflection |
 | `KHR_materials_clearcoat` | Clear coat material layer |
+| `KHR_materials_diffuse_transmission` | Diffuse light transmission through materials |
 | `KHR_materials_dispersion` | Chromatic dispersion effects |
 | `KHR_materials_emissive_strength` | Enhanced emissive material strength |
 | `KHR_materials_ior` | Index of refraction for materials |
@@ -68,6 +69,5 @@ The plugin can process the following image formats for textures:
 
 - Extension support may vary depending on your Maya version and installed renderers
 - Shader support depends on the renderers available in your Maya installation
-- Image format support follows Maya's native texture loading capabilities
 
 For specific compatibility issues and workarounds, see the [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) page. 

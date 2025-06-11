@@ -21,11 +21,3 @@ Controls how geometry vertices are processed during import:
 - Can reduce geometry complexity but may affect color sets
 
 - Suitable for most static geometry imports
-
-**Merge Vertices (Alternative Method)**
-
-- An additional option for vertex merging that provides different merging behavior
-
-- Uses Maya's native merge vertices command
-
-- **Note:** Should not be used with files containing rigged animation data or blendshape animations, as it tends to alter vertex data and can break animations.

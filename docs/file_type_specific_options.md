@@ -17,7 +17,6 @@ The right side of the import dialog contains various import settings organized i
 
 - **No merging**: Keeps geometry separate (default option)
 - **Merge Vertices**: Combines duplicate vertices  
-- **Merge Vertices (Alternative Method)**: Alternative vertex merging approach
 
 ---
 

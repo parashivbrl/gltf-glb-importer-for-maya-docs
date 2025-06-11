@@ -28,7 +28,6 @@ The plugin supports various import options that can be specified in the `options
 
 - **shaderType**: Specifies the shader type to use (default: "Standard Surface")
 - **mergeVertices**: Whether to merge vertices (default: 0/false)
-- **mergeVerticesAlt**: Alternative vertex merging option (default: 0/false)
 - **shadingOption**: Controls how shading data is handled (default: "Use Normal Data")
     *Valid values:* 
     - "Use Normal Data", 
