@@ -37,7 +37,7 @@ The Import dialog will open, providing you with several options and settings for
 
 ---
 
-## 💡 Tips & Best Practices
+## Tips & Best Practices
 
 - **File Format Support**: The importer supports both `.gltf` and `.glb` file formats
 - **Default Settings**: Most default settings work well for standard imports, but you can customize them based on your specific workflow requirements  

@@ -4,7 +4,7 @@ This page provides a comprehensive overview of all file formats, extensions, sha
 
 ---
 
-## 📁 Supported File Types
+## Supported File Types
 
 The plugin supports the following glTF file formats:
 
@@ -13,14 +13,20 @@ The plugin supports the following glTF file formats:
 
 ---
 
-## 🔧 Supported Extensions
+## Supported Extensions
 
 The plugin supports the following Khronos and vendor extensions:
+
+**Note:** The implementation status of extensions varies. Some extensions are fully supported, while others may be partially implemented or have known limitations. Please test your specific use case and refer to the [limitations documentation](limitations.md) for details.
+
+If you encounter any issues with specific extensions, please [open an issue](https://github.com/username/repo/issues) with details about your use case and sample files. This helps us improve support for partially implemented extensions.
 
 ### Khronos Extensions (KHR_)
 
 | Extension | Description |
 |-----------|-------------|
+| `KHR_animation_pointer` | Animation of arbitrary properties beyond standard transforms |
+| `KHR_draco_mesh_compression` | Geometry compression for reduced file sizes |
 | `KHR_lights_punctual` | Point, spot, and directional lights |
 | `KHR_materials_anisotropy` | Anisotropic material reflection |
 | `KHR_materials_clearcoat` | Clear coat material layer |
@@ -35,6 +41,7 @@ The plugin supports the following Khronos and vendor extensions:
 | `KHR_materials_unlit` | Unlit/constant color materials |
 | `KHR_materials_variants` | Multiple material variants per mesh |
 | `KHR_materials_volume` | Transmission volume material properties |
+| `KHR_mesh_quantization` | Reduced precision vertex attributes for smaller file sizes |
 | `KHR_texture_transform` | Texture coordinate transformations |
 
 ### Vendor Extensions (EXT_)
@@ -45,7 +52,7 @@ The plugin supports the following Khronos and vendor extensions:
 
 ---
 
-## 🎨 Supported Shaders
+## Supported Shaders
 
 The plugin supports conversion to the following Maya shader types:
 
@@ -56,7 +63,7 @@ The plugin supports conversion to the following Maya shader types:
 
 ---
 
-## 🖼️ Supported Image Formats
+## Supported Image Formats
 
 The plugin can process the following image formats for textures:
 
@@ -65,7 +72,7 @@ The plugin can process the following image formats for textures:
 
 ---
 
-## 📋 Compatibility Notes
+## Compatibility Notes
 
 - Extension support may vary depending on your Maya version and installed renderers
 - Shader support depends on the renderers available in your Maya installation

@@ -4,7 +4,7 @@ This guide will help you install the required dependencies for the glTF/GLB impo
 
 ---
 
-## 📋 System Requirements
+## System Requirements
 
 | Requirement | Details |
 |-------------|---------|
@@ -14,26 +14,27 @@ This guide will help you install the required dependencies for the glTF/GLB impo
 
 ---
 
-## 📦 Required Dependencies
+## Required Dependencies
 
 The plugin requires the following Python packages:
 
 - **[pygltflib](https://pypi.org/project/pygltflib/)** - Core library for glTF/GLB file handling
+- **[DracoPy](https://pypi.org/project/DracoPy/)** - Required for Draco mesh compression support
 - **[numpy](https://pypi.org/project/numpy/)** - Required for Maya 2024 and earlier versions only
 
-> **Note:** Maya 2025+ includes numpy by default, so you only need to install pygltflib.
+> **Note:** Maya 2025+ includes numpy by default, so you only need to install pygltflib and DracoPy.
 
 ---
 
-## 🚀 Installation Instructions
+## Installation Instructions
 
 ### Before You Start
 
-⚠️ **Important:** Close all instances of Maya before proceeding with the installation.
+**Important:** Close all instances of Maya before proceeding with the installation.
 
 ---
 
-### 🪟 Windows Installation
+### Windows Installation
 
 1. **Open Command Prompt as Administrator**
    - Press `Win + X` and select "Command Prompt (Admin)" or "Windows PowerShell (Admin)"
@@ -53,14 +54,19 @@ The plugin requires the following Python packages:
    mayapy -m pip install pygltflib
    ```
 
-4. **Install numpy (Maya 2024 and earlier only)**
+4. **Install DracoPy**
+   ```
+   mayapy -m pip install DracoPy
+   ```
+
+5. **Install numpy (Maya 2024 and earlier only)**
    ```
    mayapy -m pip install numpy
    ```
 
 ---
 
-### 🍎 macOS Installation
+### macOS Installation
 
 1. **Open Terminal**
    - Press `Cmd + Space`, type "Terminal", and press Enter
@@ -80,14 +86,19 @@ The plugin requires the following Python packages:
    ./mayapy -m pip install pygltflib
    ```
 
-4. **Install numpy (Maya 2024 and earlier only)**
+4. **Install DracoPy**
+   ```
+   ./mayapy -m pip install DracoPy
+   ```
+
+5. **Install numpy (Maya 2024 and earlier only)**
    ```
    ./mayapy -m pip install numpy
    ```
 
 ---
 
-### 🐧 Linux Installation
+### Linux Installation
 
 1. **Open Terminal**
    - Use your preferred method to open a terminal
@@ -107,14 +118,19 @@ The plugin requires the following Python packages:
    sudo ./mayapy -m pip install pygltflib
    ```
 
-4. **Install numpy (Maya 2024 and earlier only)**
+4. **Install DracoPy (may require sudo)**
+   ```
+   sudo ./mayapy -m pip install DracoPy
+   ```
+
+5. **Install numpy (Maya 2024 and earlier only)**
    ```
    sudo ./mayapy -m pip install numpy
    ```
 
 ---
 
-## ✅ Verifying Installation
+## Verifying Installation
 
 After installation, you can verify that the dependencies are properly installed:
 
@@ -124,26 +140,33 @@ After installation, you can verify that the dependencies are properly installed:
    ```python
    try:
        import pygltflib
-       print("✅ pygltflib successfully imported")
+       print("[SUCCESS] pygltflib successfully imported")
    except ImportError:
-       print("❌ pygltflib not found")
+       print("[ERROR] pygltflib not found")
+   
+   try:
+       import DracoPy
+       print("[SUCCESS] DracoPy successfully imported")
+   except ImportError:
+       print("[ERROR] DracoPy not found")
    
    try:
        import numpy
-       print("✅ numpy successfully imported")
+       print("[SUCCESS] numpy successfully imported")
    except ImportError:
-       print("❌ numpy not found")
+       print("[ERROR] numpy not found")
    ```
-You should see the following two lines in the script editor's output:
+You should see the following three lines in the script editor's output:
 ```
-✅ pygltflib successfully imported
-✅ numpy successfully imported
+[SUCCESS] pygltflib successfully imported
+[SUCCESS] DracoPy successfully imported
+[SUCCESS] numpy successfully imported
 ```
 
 ---
 
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 

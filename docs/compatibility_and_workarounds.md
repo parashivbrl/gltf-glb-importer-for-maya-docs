@@ -6,7 +6,7 @@ This document covers assets that work well with the glTF/GLB Importer for Maya a
 
 ---
 
-## ✅ What Works Well
+## What Works Well
 
 - **Khronos Sample Assets**: Most sample assets from the official [Khronos glTF Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) import properly without any issues when testing the plugin
 - **Standard glTF 2.0 Assets**: Files exported using proper glTF exporters that follow Khronos specifications
@@ -19,7 +19,7 @@ This document covers assets that work well with the glTF/GLB Importer for Maya a
 
 ---
 
-## 💡 Recommended Workarounds
+## Recommended Workarounds
 
 ### For Sketchfab Assets with Rigged Animations
 To properly import Sketchfab assets with rigged animations, use this Blender preprocessing workflow:
@@ -55,7 +55,7 @@ To properly import Sketchfab assets with rigged animations, use this Blender pre
 
 ---
 
-## 🔄 Round-trip Workflow: Re-exporting Imported Assets
+## Round-trip Workflow: Re-exporting Imported Assets
 
 When importing glTF/GLB files and then wanting to export them again using the Babylon exporter, several compatibility issues arise:
 
@@ -103,7 +103,7 @@ If your asset has animation clips and you need to re-export, follow these steps:
 
 ---
 
-## 🔧 Troubleshooting Tips
+## Troubleshooting Tips
 
 ### Asset Source Recommendations
 - **Recommended**: Use assets from the [Khronos Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) for testing
@@ -119,7 +119,7 @@ If your asset has animation clips and you need to re-export, follow these steps:
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) - Official test assets
 - [glTF Validator](https://github.khronos.org/glTF-Validator/) - Online validation tool

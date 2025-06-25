@@ -6,21 +6,21 @@ The right side of the import dialog contains various import settings organized i
 
 ## File Type Specific Options
 
-### 🎨 Material Settings
+### Material Settings
 
 - **Shader Type**: Set to **"Standard Surface"** (default)
 - **Shading Option**: Set to **"Use Normal Data"** (default)
 
 ---
 
-### 📐 Geometry Options
+### Geometry Options
 
 - **No merging**: Keeps geometry separate (default option)
 - **Merge Vertices**: Combines duplicate vertices  
 
 ---
 
-### 🖼️ Image Extraction
+### Image Extraction
 
 - **Use Relative Path**: Extracts images using relative path
 - **Default Location**: Images will be extracted to the project directory/source images by default
@@ -31,7 +31,7 @@ The right side of the import dialog contains various import settings organized i
 
 ---
 
-### 🎬 Animation Settings
+### Animation Settings
 
 - **Open Time Editor Window**: Opens the Time Editor for animation playback and editing when enabled
 
@@ -39,7 +39,7 @@ The right side of the import dialog contains various import settings organized i
 
 ## Common to All File Types
 
-### ⚙️ General Options
+### General Options
 
 - **Group**: Groups imported objects together
 - **Remove duplicate shading networks**: Removes redundant material connections
@@ -47,7 +47,7 @@ The right side of the import dialog contains various import settings organized i
 
 ---
 
-### 🔗 Referencing Options
+### Referencing Options
 
 - **Preserve references**: Maintains reference relationships
 - **Load Settings**: Choose how to handle saved reference load states
@@ -55,7 +55,7 @@ The right side of the import dialog contains various import settings organized i
 
 ---
 
-### ▶️ Playback Options
+### Playback Options
 
 - **Always Override if Scene is Empty**: Automatically overrides playback settings in empty scenes
 - **Framerate Import**: Options for handling frame rate differences

@@ -23,6 +23,8 @@ nav:
 
 theme:
   name: material
+  favicon: img/gltf_maya_icon.png
+  logo: img/gltf_maya_icon.png
   font:
     text: Merriweather Sans
     code: Red Hat Mono

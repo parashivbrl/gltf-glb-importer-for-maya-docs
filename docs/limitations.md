@@ -4,11 +4,11 @@
 
 While the glTF/GLB Importer for Maya successfully handles most files that adhere to the [Khronos glTF 2.0 specifications](https://www.khronos.org/gltf/), there are several known limitations and specific issues that users should be aware of.
 
-> 💡 **For information about compatible assets and workarounds, see the [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) guide.**
+> **Note:** For information about compatible assets and workarounds, see the [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) guide.
 
 ---
 
-## ⚠️ Sketchfab Asset Import Issues
+## Sketchfab Asset Import Issues
 
 Sketchfab assets, particularly those that are **automatically generated**, present specific challenges:
 
@@ -29,7 +29,7 @@ Sketchfab assets, particularly those that are **automatically generated**, prese
 
 ---
 
-## 🔧 General Plugin Limitations
+## General Plugin Limitations
 
 ### File Format Constraints
 - **glTF Extensions**: Not all Khronos extensions are fully supported
@@ -52,7 +52,7 @@ Sketchfab assets, particularly those that are **automatically generated**, prese
 
 ---
 
-## 📋 Reporting Issues
+## Reporting Issues
 
 If you encounter limitations not listed here, please provide:
 

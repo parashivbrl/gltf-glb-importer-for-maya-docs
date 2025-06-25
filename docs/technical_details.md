@@ -31,8 +31,8 @@ The plugin supports various import options that can be specified in the `options
 - **shadingOption**: Controls how shading data is handled (default: "Use Normal Data")
     *Valid values:* 
     - "Use Normal Data", 
-    - "Hard edges (Maya native)", 
-    - "Soften edges (Maya native)"
+    - "Hard edge", 
+    - "Soften edge"
 - **useRelativePath**: Whether to use relative paths for textures (default: 0/false)
 - **openTimeEditor**: Whether to open the Time Editor after import (default: 0/false)
 

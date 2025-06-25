@@ -23,4 +23,4 @@ Material variants enable artists and designers to quickly experiment with differ
 
 ## Important Note
 
-⚠️ **Warning**: Avoid using "Delete Unused Nodes" from the Hypershade's Edit dropdown menu when working with material variants. This operation will delete materials that are not currently assigned to geometry, which includes the alternative materials used by other variants. If unused materials are deleted, switching between material variants will not work properly as the required materials will no longer be available in the scene.
+**Warning**: Avoid using "Delete Unused Nodes" from the Hypershade's Edit dropdown menu when working with material variants. This operation will delete materials that are not currently assigned to geometry, which includes the alternative materials used by other variants. If unused materials are deleted, switching between material variants will not work properly as the required materials will no longer be available in the scene.

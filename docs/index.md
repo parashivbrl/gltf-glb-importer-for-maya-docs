@@ -10,28 +10,22 @@ This plugin unlocks access to the vast ecosystem of optimized 3D content from we
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- **📁 File Format Support**: Import both `.gltf` and `.glb` file formats
-- **🎯 Asset Import**: Support for meshes, materials, textures, animations, and more
-- **🎨 Material System**: PBR material conversion to Maya's native material system  
-- **🎬 Animation Support**: Import skeletal animations and morph targets
-- **🔧 Extension Compatibility**: Support for common Khronos extensions and selected vendor extensions
+- **File Format Support**: Import both `.gltf` and `.glb` file formats
+- **Asset Import**: Support for meshes, materials, textures, animations, and more
+- **Material System**: PBR material conversion to Maya's native material system  
+- **Animation Support**: Import skeletal animations and morph targets
+- **Extension Compatibility**: Support for common Khronos extensions and selected vendor extensions
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 1. **[Install Dependencies](dependencies_installation.md)** - Set up required Python packages
 2. **[Install Plugin](plugin_installation.md)** - Add the plugin to your Maya installation  
 3. **[Import Files](importing_gltf_glb_file.md)** - Start importing glTF/glb content
 4. **[Configure Options](file_type_specific_options.md)** - Customize import settings
-
----
-
-## 💡 Why Choose This Plugin?
-
-Transform your Maya workflow with industry-standard 3D content import capabilities. Whether you're working with web-based 3D assets, game engine exports, or modern creation tool outputs, this plugin ensures seamless integration into your Maya projects.
 
 ---
 
