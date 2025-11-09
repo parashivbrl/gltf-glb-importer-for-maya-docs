@@ -13,7 +13,7 @@ nav:
   - Geometry Options: geometry_options.md
   - Image Extraction: image_extraction.md
   - Animation Settings: animation_settings.md
-  - GLB/GLTF Menu: glb_gltf_menu.md
+  - glTF2.0 Menu: gltf2_0_menu.md
   - Show Material Variants: show_material_variants.md
   - Show Animation Clips: show_animation_clips.md
   - Technical Details: technical_details.md

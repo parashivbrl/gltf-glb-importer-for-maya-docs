@@ -1,6 +1,6 @@
-# GLB/GLTF Menu
+# glTF2.0 Menu
 
-The GLB/GLTF menu provides access to various features and tools for working with GLB and GLTF files in Maya.
+The glTF2.0 menu provides access to various features and tools for working with GLB and GLTF files in Maya.
 
 ![Screenshot](img/image_glb_gltf_menu.png)
 
