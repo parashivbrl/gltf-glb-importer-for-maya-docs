@@ -2,7 +2,10 @@
 
 The Material Variants Selector allows you to browse and apply different material configurations available in your GLTF/GLB files. This feature is particularly useful when working with assets that contain multiple material variations for the same model.
 
-![Screenshot](img/image_material_variants.png)
+<video controls>
+  <source src="vid/material_variants_demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 *Courtesy by Khronos glTF sample assets*
 
