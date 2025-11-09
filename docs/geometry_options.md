@@ -21,3 +21,13 @@ Controls how geometry vertices are processed during import:
 - Can reduce geometry complexity but may affect color sets
 
 - Suitable for most static geometry imports
+
+**Skip Skin Binding**
+
+- When enabled, skin binding data is ignored and geometry is imported without skeleton/deformation setup
+
+- Useful when you only need the static geometry without animation or deformation capabilities
+
+- When disabled (default), skin binding is imported and applied to geometry that has skeleton/deformation data in the GLTF/GLB file
+
+- Required for animated or skinned meshes to work correctly in Maya

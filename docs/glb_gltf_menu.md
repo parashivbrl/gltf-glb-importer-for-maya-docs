@@ -17,5 +17,4 @@ Provides access to help resources and documentation.
 
 ### Help Submenu
 - **About** - Shows information about the GLB/GLTF importer plugin
-- **Online Documentation** - Opens the online documentation in your web browser
-- **Demo** - Provides access to demo tutorial
+- **Online Documentation** - Opens the online documentation in 

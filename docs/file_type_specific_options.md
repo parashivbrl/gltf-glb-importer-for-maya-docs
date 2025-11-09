@@ -10,13 +10,16 @@ The right side of the import dialog contains various import settings organized i
 
 - **Shader Type**: Set to **"Standard Surface"** (default)
 - **Shading Option**: Set to **"Use Normal Data"** (default)
+- **Import Ambient Occlusion (AO)**: AO will be multiplied with base color texture
+- **Skip Material Creation**: Skips material creation during import
 
 ---
 
 ### Geometry Options
 
-- **No merging**: Keeps geometry separate (default option)
-- **Merge Vertices**: Combines duplicate vertices  
+- **No merging**: Discontinuous geometry along the UV boundary/seams (default option)
+- **Merge Vertices**: Combines duplicate vertices
+- **Skip Skin Binding**: Skips skin binding during import  
 
 ---
 
@@ -33,7 +36,8 @@ The right side of the import dialog contains various import settings organized i
 
 ### Animation Settings
 
-- **Open Time Editor Window**: Opens the Time Editor for animation playback and editing when enabled
+- **Import Animations**: Creates Maya keyframes for translation, rotation, and scale animations
+- **Open Time Editor Window**: Opens Time Editor window for animation playback and editing
 
 ---
 

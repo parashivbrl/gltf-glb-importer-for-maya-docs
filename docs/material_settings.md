@@ -22,7 +22,7 @@ Controls which shader system is used for imported materials:
 
 - Best choice when primarily using Arnold for rendering
 
-**OpenPBR**
+**OpenPBR** (Maya 2025+ only)
 
 - Uses OpenPBR (Open Physically Based Rendering) shaders
 
@@ -67,3 +67,27 @@ Controls how normals and shading are handled during import:
 - Creates smooth transitions between faces
 
 - Better for organic or character models
+
+## Import Ambient Occlusion (AO)
+
+Controls whether ambient occlusion map is imported from the GLTF/GLB file:
+
+- When enabled, ambient occlusion textures are imported and applied to materials
+
+- AO will be multiplied with base color texture
+
+- Useful for adding depth and shadow detail to imported models
+
+- When disabled, ambient occlusion data is ignored during import
+
+## Skip Material Creation
+
+Controls whether materials are created during import:
+
+- When enabled, no materials are created for the imported geometry
+
+- Geometry is imported without any material assignments
+
+- Useful when you want to manually assign materials or use existing materials in your scene
+
+- When disabled (default), materials are automatically created based on the GLTF/GLB file data

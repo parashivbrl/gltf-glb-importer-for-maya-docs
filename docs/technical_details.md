@@ -2,12 +2,12 @@
 
 ## Plugin Usage
 
-Once the plugin is successfully installed, it adds a new file type **"GLTF/GLB"** to Maya's import options. This enables users to import GLTF and GLB files directly through Maya's file import system or programmatically using MEL and Python commands.
+Once the plugin is successfully installed, it adds a new file type **"glTF2"** to Maya's import options. This enables users to import GLTF and GLB files directly through Maya's file import system or programmatically using MEL and Python commands.
 
 ### MEL Command
 
 ```mel
-file -import -type "GLTF/GLB" -options "shaderType=Standard Surface;shadingOption=Use Normal Data;" {file_path};
+file -import -type "glTF2" -options "shaderType=Standard Surface;shadingOption=Use Normal Data;" {file_path};
 ```
 
 ### Python Command
@@ -17,7 +17,7 @@ import maya.cmds as cmds
 
 cmds.file({file_path}, 
           i=True, 
-          type="GLTF/GLB",
+          type="glTF2",
           options="shaderType=Standard Surface;shadingOption=Use Normal Data;"
           )
 ```
@@ -27,21 +27,26 @@ cmds.file({file_path},
 The plugin supports various import options that can be specified in the `options` parameter as a semicolon-separated string in "key=value" format. **All options are optional** and will use their default values if not specified:
 
 - **shaderType**: Specifies the shader type to use (default: "Standard Surface")
+    *Valid values:* "Standard Surface", "Arnold", "OpenPBR", "Stingray"
 - **mergeVertices**: Whether to merge vertices (default: 0/false)
 - **shadingOption**: Controls how shading data is handled (default: "Use Normal Data")
     *Valid values:* 
     - "Use Normal Data", 
-    - "Hard edge", 
-    - "Soften edge"
+    - "Harden Edge", 
+    - "Soften Edge"
 - **useRelativePath**: Whether to use relative paths for textures (default: 0/false)
 - **openTimeEditor**: Whether to open the Time Editor after import (default: 0/false)
+- **importAnimations**: Whether to import TRS animations from glTF file as Maya keyframes (default: 1/true)
+- **importAO**: Whether to import Ambient Occlusion from ORM texture (R channel) and multiply with base color (default: 0/false)
+- **skipMaterials**: Whether to skip material/shader creation during import (default: 0/false)
+- **skipSkinBinding**: Whether to skip skin binding (skinCluster creation) during import (default: 0/false)
 
 #### Options String Format
 Options are specified as semicolon-separated key-value pairs: `"key1=value1;key2=value2;key3=value3"`
 
 #### Example with Multiple Options
 ```mel
-file -import -type "GLTF/GLB" -options "shaderType=Standard Surface;shadingOption=Hard edges (Maya native);mergeVertices=1;useRelativePath=1;" "path/to/file.glb";
+file -import -type "glTF2" -options "shaderType=Standard Surface;shadingOption=Harden Edge;mergeVertices=1;useRelativePath=1;importAnimations=1;" "path/to/file.glb";
 ```
 
 ### Integration with Custom Tools

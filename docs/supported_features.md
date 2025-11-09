@@ -25,7 +25,6 @@ If you encounter any issues with specific extensions, please [open an issue](htt
 
 | Extension | Description |
 |-----------|-------------|
-| `KHR_animation_pointer` | Animation of arbitrary properties beyond standard transforms |
 | `KHR_draco_mesh_compression` | Geometry compression for reduced file sizes |
 | `KHR_lights_punctual` | Point, spot, and directional lights |
 | `KHR_materials_anisotropy` | Anisotropic material reflection |
@@ -58,7 +57,7 @@ The plugin supports conversion to the following Maya shader types:
 
 - **Standard Surface** - Maya's standard physically-based shader
 - **AiStandardSurface** - Arnold renderer's standard surface shader
-- **OpenPBR** - Open-source physically-based rendering shader
+- **OpenPBR** - Open-source physically-based rendering shader (Maya 2025 and later versions)
 - **StingrayPBS** - Stingray physically-based shader (only basic material properties: BaseColor, ORM, Normal, Emissive)
 
 ---

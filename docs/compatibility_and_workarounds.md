@@ -107,8 +107,7 @@ If your asset has animation clips and you need to re-export, follow these steps:
 
 ### Asset Source Recommendations
 - **Recommended**: Use assets from the [Khronos Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) for testing
-- **Reliable**: Assets exported from Maya using Babylon exporter
-- **Reliable**: Assets exported from Blender using the built-in glTF 2.0 addon
+- **Reliable**: Assets exported from Maya using Babylon exporter or Assets exported from Blender using the built-in glTF 2.0 addon
 - **Caution**: Sketchfab auto-generated assets may require preprocessing
 
 ### Export Guidelines

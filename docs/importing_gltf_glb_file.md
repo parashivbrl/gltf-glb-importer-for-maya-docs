@@ -17,9 +17,9 @@ The Import dialog will open, providing you with several options and settings for
 
 ## File Selection
 
+- **Files of type**: Ensure "glTF2" is selected from the dropdown
 - **Look in**: Navigate to the folder containing your glTF/glb file
 - **File name**: Select or type the name of your glTF/glb file  
-- **Files of type**: Ensure "glTF/glb" is selected from the dropdown
 
 ---
 
@@ -36,11 +36,3 @@ The Import dialog will open, providing you with several options and settings for
 5. **Cancel**: Click **Cancel** to close the dialog without importing
 
 ---
-
-## Tips & Best Practices
-
-- **File Format Support**: The importer supports both `.gltf` and `.glb` file formats
-- **Default Settings**: Most default settings work well for standard imports, but you can customize them based on your specific workflow requirements  
-- **Animation Review**: The Time Editor window can be helpful for reviewing imported animations
-- **Preview Before Import**: Take advantage of Maya's preview features to verify your import settings before finalizing
-
