@@ -2,8 +2,8 @@
 
 The Animation Clips Manager allows you to view and manage animation clips associated with imported GLTF/GLB files. This interface provides an organized way to access different animations contained within your 3D assets.
 
-<video controls>
-  <source src="vid/animation_clips_demo.mp4" type="video/mp4">
+<video controls preload="metadata" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
+  <source src="../vid/animation_clips_demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
