@@ -29,8 +29,8 @@
             └── Autodesk\
                      └── ApplicationPlugins\
                                  └── gltf2ImporterForMaya\
-                                             ├── Contents
-                                             |       └── plugin
+                                             ├── Contents\
+                                             |       └── plugin\
                                              |              └── ...
                                              └── PackageContents.xml
    ```
@@ -63,9 +63,9 @@
          └── Preferences/
                   └── Autodesk/
                            └── ApplicationsAddins/
-                                       └── gltf2ImporterForMaya\
-                                                   ├── Contents
-                                                   |       └── plugin
+                                       └── gltf2ImporterForMaya/
+                                                   ├── Contents/
+                                                   |       └── plugin/
                                                    |              └── ...
                                                    └── PackageContents.xml
    ```
@@ -101,8 +101,8 @@
    └── Autodesk/
        └── ApplicationPlugins/
                   └── gltf2ImporterForMaya/
-                                 ├── Contents
-                                 |       └── plugin
+                                 ├── Contents/
+                                 |       └── plugin/
                                  |              └── ...
                                  └── PackageContents.xml
    ```
@@ -122,8 +122,8 @@
       └── autodesk/
             └── ApplicationPlugins/
                         └── gltf2ImporterForMaya/
-                                    ├── Contents
-                                    |       └── plugin
+                                    ├── Contents/
+                                    |       └── plugin/
                                     |              └── ...
                                     └── PackageContents.xml
    ```
