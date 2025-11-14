@@ -80,14 +80,14 @@ Controls whether ambient occlusion map is imported from the GLTF/GLB file:
 
 - When disabled, ambient occlusion data is ignored during import
 
-## Skip Material Creation
+## Import materials
 
 Controls whether materials are created during import:
 
-- When enabled, no materials are created for the imported geometry
+- When disabled, no materials are created for the imported geometry
 
 - Geometry is imported without any material assignments
 
 - Useful when you want to manually assign materials or use existing materials in your scene
 
-- When disabled (default), materials are automatically created based on the GLTF/GLB file data
+- When enabled (default), materials are automatically created based on the GLTF/GLB file data

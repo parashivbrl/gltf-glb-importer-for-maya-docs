@@ -2,11 +2,9 @@
 
 ![Screenshot](img/image_home.png)
 
-Welcome to the **glTF and glb Importer for Maya** documentation!
+Explore the **glTF and glb Importer for Maya** user guide.
 
-The glTF/glb Importer for Maya bridges the gap between modern 3D content delivery and Maya's powerful creative environment. Import industry-standard glTF and glb files directly into Maya with full support for materials, animations, scene hierarchies and more.
-
-This plugin unlocks access to the vast ecosystem of optimized 3D content from web platforms, game engines, and modern creation tools. Transform your Maya workflow with seamless integration of PBR materials, skeletal animations, and morph targets - **no conversion headaches, no data loss**.
+Easily bring .gltf and .glb assets into Maya, enabling you to work with modern 3D formats while preserving materials, animations, scene structure, and more all within Maya’s robust environment.
 
 ---
 
@@ -17,6 +15,7 @@ This plugin unlocks access to the vast ecosystem of optimized 3D content from we
 - **Material System**: PBR material conversion to Maya's native material system  
 - **Animation Support**: Import skeletal animations and morph targets
 - **Extension Compatibility**: Support for common Khronos extensions and selected vendor extensions
+- **Drag and Drop Support**: Simply drag and drop files into the Maya viewport to import them.
 
 ---
 

@@ -42,7 +42,7 @@
     5. **Asset source**: Assets from Khronos Sample Assets, Maya/Babylon exporter, or Blender/glTF 2.0 exporter typically work best
 
 ??? question "Can I import animations from glTF/glb files?"
-    Yes! The plugin supports animation import including skeletal animations, transform-based animations, and morph targets. Configure your animation settings using the [Animation Settings](animation_settings.md) options before importing. You can also use the [Show Animation Clips](show_animation_clips.md) feature to manage multiple animation clips, which are automatically organized in Maya's Time Editor.
+    Yes! The plugin supports animation import including skeletal animations, transform-based animations, and morph targets. Configure your animation settings using the [Animation Settings](animation_settings.md) options before importing. You can enable "Open Time Editor Window" to automatically open Maya's Time Editor after import for immediate access to animation clips. You can also use the [Show Animation Clips](show_animation_clips.md) feature to manage multiple animation clips, which are automatically organized in Maya's Time Editor.
 
 ??? question "How do I handle material variants?"
     Material variants are supported through the [Show Material Variants](show_material_variants.md) feature. This allows you to switch between different material configurations defined in your glTF file.
@@ -54,14 +54,15 @@
 
     1. **Shader type selection**: Choose the appropriate shader type in [Material Settings](material_settings.md) - Standard Surface (default), Arnold, OpenPBR (Maya 2025+), or Stingray
     2. **Shader limitations**: Note that Stingray only supports basic properties (BaseColor, ORM, Normal, Emissive), and OpenPBR may have rendering limitations with Arnold
-    3. **Texture paths**: Ensure textures are properly linked
-    4. **Maya's material system**: Some glTF material features may need manual adjustment
-    5. **Lighting setup**: Your Maya scene lighting affects material appearance
+    3. **Ambient Occlusion**: Enable "Import Ambient Occlusion" in [Material Settings](material_settings.md) to import AO from ORM texture (R channel) and multiply with base color for added depth
+    4. **Texture paths**: Ensure textures are properly linked
+    5. **Maya's material system**: Some glTF material features may need manual adjustment
+    6. **Lighting setup**: Your Maya scene lighting affects material appearance
 
 ??? question "Can I extract textures during import?"
     The importer handles textures differently depending on the file type:
     
-    - **GLB files**: The importer needs to extract and save textures using the [Image Extraction](image_extraction.md) feature because textures are embedded in the binary file. By default, textures are saved to your Maya project's sourceimages directory. You can enable "Use Relative Path" to save textures relative to the GLB file location, which is useful for portable project structures.
+    - **GLB files**: The importer needs to extract and save textures using the [Image Extraction](image_extraction.md) feature because textures are embedded in the binary file. By default (when "Use Relative Path" is unchecked), textures are saved to your Maya project's sourceimages directory (e.g., `C:\Users\{User name}\Documents\maya\projects\default\sourceimages\gltf_textures`). When "Use Relative Path" is enabled, textures are saved relative to the GLB file location, which is useful for portable project structures.
     
     - **GLTF files**: Extraction is not needed because textures are external files. The texture image paths will be set relative to the GLTF file location automatically.
 
@@ -71,9 +72,9 @@
     - **Standard Surface** (default): Best for general use with Arnold and other renderers
     - **Arnold**: Optimized for Arnold renderer workflows
     - **OpenPBR** (Maya 2025+): Industry-standard PBR shader, though Arnold may not render all properties correctly
-    - **Stingray**: Legacy option, only supports basic material properties
+    - **Stingray**: Legacy option, only supports basic material properties (BaseColor, ORM, Normal, Emissive)
     
-    Some manual adjustment may be required for optimal results depending on your chosen shader type.
+    Additionally, you can enable "Import Ambient Occlusion" to import AO from ORM texture (R channel) and multiply it with base color for enhanced depth and shadow detail. Some manual adjustment may be required for optimal results depending on your chosen shader type.
 
 ## Performance Questions
 
@@ -91,13 +92,13 @@
 
     **For Static Geometry (No Animation Needed):**
     - Disable "Import Animations" in [Animation Settings](animation_settings.md) to skip all animation processing
-    - Enable "Skip Skin Binding" in [Geometry Options](geometry_options.md) to avoid processing skeleton and skinning data, which significantly speeds up imports for complex rigged assets
+    - Disable "Import Skin Binding" in [Geometry Options](geometry_options.md) to avoid processing skeleton and skinning data, which significantly speeds up imports for complex rigged assets
 
     **For Geometry Optimization:**
     - Use "Merge Vertices" in [Geometry Options](geometry_options.md) to reduce geometry complexity, which can speed up processing for high-poly models
 
     **For Material Optimization:**
-    - Enable "Skip Material Creation" in [Material Settings](material_settings.md) if you only need geometry and plan to assign materials manually later
+    - Disable "Import Materials" in [Material Settings](material_settings.md) if you only need geometry and plan to assign materials manually later
 
 
     These optimizations are particularly effective for large files, complex rigged assets, or when you only need specific aspects of the imported content.
@@ -105,7 +106,7 @@
 ## Troubleshooting
 
 ??? question "The plugin menu doesn't appear in Maya"
-    If the [glTF2.0](glb_gltf_menu.md) is not visible:
+    If the [glTF2.0](gltf2_0_menu.md) menu is not visible:
 
     1. Verify the plugin is properly installed
     2. Check that the plugin is loaded in Maya's Plugin Manager
@@ -125,9 +126,10 @@
     Animation issues can often be resolved by:
 
     1. Checking [Animation Settings](animation_settings.md) configuration - Ensure "Import Animations" is enabled
-    2. Using [Show Animation Clips](show_animation_clips.md) to manage multiple animations - All clips are organized in Maya's Time Editor
-    3. Verifying timeline settings in Maya
-    4. Note: Transform-based animations work better than joint-based animations - Sketchfab assets with rigged animations may require preprocessing (see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md))
+    2. Enabling "Open Time Editor Window" in [Animation Settings](animation_settings.md) to automatically open the Time Editor after import for easier access to animation clips
+    3. Using [Show Animation Clips](show_animation_clips.md) to manage multiple animations - All clips are organized in Maya's Time Editor
+    4. Verifying timeline settings in Maya
+    5. Note: Transform-based animations work better than joint-based animations - Sketchfab assets with rigged animations may require preprocessing (see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md))
 
 ## Advanced Usage
 
@@ -138,7 +140,7 @@
     For large scenes:
 
     1. Consider splitting the scene into smaller files
-    2. Use selective import options - Enable "Skip Skin Binding" if you don't need animation, or "Skip Material Creation" to import geometry only
+    2. Use selective import options - Disable "Import Skin Binding" if you don't need animation, or disable "Import Materials" to import geometry only
     3. Optimize geometry before import
     4. Monitor Maya's memory usage
     5. Use "Merge Vertices" option to reduce geometry complexity
@@ -153,7 +155,7 @@
 ??? question "What's the difference between 'No merging' and 'Merge Vertices' geometry options?"
     - **No merging** (default): Preserves original mesh structure, keeps components separate along UV seams, maintains material assignments per mesh
     - **Merge Vertices**: Automatically combines vertices that share the same position, can reduce geometry complexity but may affect color sets
-    - **Skip Skin Binding**: When enabled, ignores skin binding data and imports static geometry only - useful when you don't need animation or deformation
+    - **Import Skin Binding**: When enabled (default), imports skin binding data and applies it to geometry with skeleton/deformation data. When disabled, ignores skin binding data and imports static geometry only - useful when you don't need animation or deformation
 
 ??? question "Can I modify import settings after import?"
     Import settings apply during the import process. To change settings, you'll need to re-import the file with new configuration options. However, you can modify materials, apply material variants using [Show Material Variants](show_material_variants.md), and manage animation clips using [Show Animation Clips](show_animation_clips.md) after import.

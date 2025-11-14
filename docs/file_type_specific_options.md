@@ -10,8 +10,8 @@ The right side of the import dialog contains various import settings organized i
 
 - **Shader Type**: Set to **"Standard Surface"** (default)
 - **Shading Option**: Set to **"Use Normal Data"** (default)
-- **Import Ambient Occlusion (AO)**: AO will be multiplied with base color texture
-- **Skip Material Creation**: Skips material creation during import
+- **Import Ambient Occlusion**: AO will be multiplied with base color texture
+- **Import Materials**: Imports materials from the GLB/GLTF file (enabled by default)
 
 ---
 
@@ -19,7 +19,23 @@ The right side of the import dialog contains various import settings organized i
 
 - **No merging**: Discontinuous geometry along the UV boundary/seams (default option)
 - **Merge Vertices**: Combines duplicate vertices
-- **Skip Skin Binding**: Skips skin binding during import  
+- **Import Skin Binding**: Imports skin binding data from the GLB/GLTF file (enabled by default)
+
+---
+
+### Animation Settings
+
+- **Animation FPS**: Set the frame rate for imported animations (default: **"24 fps (Film)"**)
+- **Import Animations**: Creates Maya keyframes for translation, rotation, and scale animations
+- **Open Time Editor Window**: Opens Time Editor window for animation playback and editing
+
+---
+
+### Viewport Options
+
+- **Focus view on imported objects**: Automatically focuses the viewport camera on imported objects
+- **Animate framing**: Animates the camera framing to focus on imported objects
+- **Center view**: Centers the viewport view on imported objects
 
 ---
 
@@ -31,13 +47,6 @@ The right side of the import dialog contains various import settings organized i
   C:\Users\[User name]\Documents\maya\projects\default\sourceimages\gltf_textures
   ```
 - **Relative Extraction**: Images will be extracted relative to GLB/GLTF file location when enabled
-
----
-
-### Animation Settings
-
-- **Import Animations**: Creates Maya keyframes for translation, rotation, and scale animations
-- **Open Time Editor Window**: Opens Time Editor window for animation playback and editing
 
 ---
 

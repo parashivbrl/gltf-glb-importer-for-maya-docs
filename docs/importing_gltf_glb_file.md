@@ -6,8 +6,16 @@ This guide walks you through the process of importing glTF and glb files into Au
 
 ## Accessing the Import Feature
 
-1. **Open the File Menu**: In Maya's main menu bar, click on **File**
-2. **Select Import**: From the dropdown menu, click on **Import...**
+You can import glTF/glb files into Maya using either of the following methods:
+
+### 1. **Import via File Menu**
+
+- **Step 1**: In Maya's main menu bar, click on **File**
+- **Step 2**: Select **Import...** from the dropdown menu
+
+### 2. **Drag and Drop**
+
+- Simply drag your `.gltf` or `.glb` file from your file explorer and drop it directly into Maya's viewport to start the import process
 
 ---
 
@@ -29,7 +37,7 @@ The Import dialog will open, providing you with several options and settings for
 
 2. **Select the file**: Click on the desired glTF/glb file in the file list
 
-3. **Configure import options**: Adjust the settings in the Options panel according to your needs
+3. **Configure import options**: Adjust the settings in the Options panel's File specific options section according to your needs
 
 4. **Import**: Click the **Import** button to begin the import process
 

@@ -73,7 +73,5 @@ The plugin can process the following image formats for textures:
 
 ## Compatibility Notes
 
-- Extension support may vary depending on your Maya version and installed renderers
-- Shader support depends on the renderers available in your Maya installation
-
-For specific compatibility issues and workarounds, see the [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) page. 
+- While most Khronos extensions are implemented, not all are supported by the importer. Some extensions are not yet implemented, and others may not be natively supported in Maya.
+- Shader support depends on the Maya version

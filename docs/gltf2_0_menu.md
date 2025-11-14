@@ -4,17 +4,14 @@ The glTF2.0 menu provides access to various features and tools for working with 
 
 ![Screenshot](img/image_glb_gltf_menu.png)
 
-## Show Material Variants
-1. Opens **Material Variants Selector** to list all available variants
+##Material and Animation Tools
+1. Opens both **Material Variants Selector** and **Animation Clips Manager** simultaneously
 2. Displays material variants for imported GLB/GLTF assets
-
-## Show Animation Clips
-1. Opens **Animation Clips Manager** to list all available animation clips
-2. Shows animation clips from the GLB/GLTF file
+3. Shows animation clips from the GLB/GLTF file
+4. Both UIs are docked by default when executed
 
 ## Help
-Provides access to help resources and documentation.
+Provides access to the online documentation.
 
-### Help Submenu
-- **About** - Shows information about the GLB/GLTF importer plugin
-- **Online Documentation** - Opens the online documentation in 
+## About
+Shows information about the GLB/GLTF importer plugin 

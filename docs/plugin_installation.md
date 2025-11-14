@@ -16,64 +16,96 @@
 
 ### Windows
 
-1. **Close Maya**: Close all instances of Maya if currently running
+- **Close Maya**: Close all instances of Maya if currently running
 
-2. **Copy Scripts**: Copy the entire `gltf2ImporterForMaya` folder from the extracted archive and paste it into:
+- **Copy Plugin Folder**: Copy the entire `gltf2ImporterForMaya` folder from the extracted archive and paste it into:
    ```
    C:\ProgramData\Autodesk\ApplicationPlugins
    ```
-4. **Restart Maya**: Launch Maya again
 
-5. The plugin should be enabled automatically
+   **Final folder structure:**
+   ```
+   C:\ProgramData\
+            └── Autodesk\
+                     └── ApplicationPlugins\
+                                 └── gltf2ImporterForMaya\
+                                             ├── Contents
+                                             |       └── plugin
+                                             |              └── ...
+                                             └── PackageContents.xml
+   ```
 
-6. **Open Plugin Manager**: Go to **Windows > Settings/Preferences > Plug-in Manager**
+-  **Restart Maya**: Launch Maya again
 
-6. Find `gltf2_importer_plugin.py` in the list and notice that both Load and Auto Load checkboxes are enabled
+-  The plugin should be enabled automatically
+
+-  **Open Plugin Manager**: Go to **Windows > Settings/Preferences > Plug-in Manager**
+
+-  Find `gltf2_importer_plugin.py` in the list and notice that both Load and Auto Load checkboxes are enabled
 
 ---
 
 ### macOS
 
-1. **Close Maya**: Close all instances of Maya if currently running
+   **Close Maya**: Close all instances of Maya if currently running
 
-2. **Copy Plugin Folder**: Copy the entire `gltf2ImporterForMaya` folder from the extracted archive and paste it into one of the following locations:
+   **Copy Plugin Folder**: Copy the entire `gltf2ImporterForMaya` folder from the extracted archive and paste it into the following location:
 
-   **Option A - User-specific installation (Recommended):**
+   **User-specific installation (Recommended):**
    ```
-   ~/Library/Preferences/Autodesk/ApplicationPlugins
+   ~/Library/Preferences/Autodesk/ApplicationsAddins
    ```
-   > **Note:** The `~` symbol represents your home directory. You can access this folder by opening Finder, pressing `Cmd+Shift+G`, and typing `~/Library/Preferences/Autodesk/ApplicationPlugins`
+   > **Note:** The `~` symbol represents your home directory. You can access this folder by opening Finder, pressing `Cmd+Shift+G`, and typing `~/Library/Preferences/Autodesk/ApplicationsAddins`
 
-   **Option B - System-wide installation (Requires admin privileges):**
+   **Final folder structure:**
    ```
-   /Library/Application Support/Autodesk/ApplicationPlugins
+   ~/Library/
+         └── Preferences/
+                  └── Autodesk/
+                           └── ApplicationsAddins/
+                                       └── gltf2ImporterForMaya\
+                                                   ├── Contents
+                                                   |       └── plugin
+                                                   |              └── ...
+                                                   └── PackageContents.xml
    ```
-   > **Note:** This requires administrator access. You may need to use `sudo` in Terminal to copy files here.
 
-3. **Restart Maya**: Launch Maya again
+   **Restart Maya**: Launch Maya again
 
-4. The plugin should be enabled automatically
+   The plugin should be enabled automatically
 
-5. **Open Plugin Manager**: Go to **Windows > Settings/Preferences > Plug-in Manager**
+   **Open Plugin Manager**: Go to **Windows > Settings/Preferences > Plug-in Manager**
 
-6. Find `gltf2_importer_plugin.py` in the list and notice that both Load and Auto Load checkboxes are enabled
+   Find `gltf2_importer_plugin.py` in the list and notice that both Load and Auto Load checkboxes are enabled
 
 ---
 
 ### Linux
 
-1. **Close Maya**: Close all instances of Maya if currently running
+   **Close Maya**: Close all instances of Maya if currently running
 
-2. **Copy Plugin Folder**: Copy the entire `gltf2ImporterForMaya` folder from the extracted archive and paste it into one of the following locations:
+   **Copy Plugin Folder**: Copy the entire `gltf2ImporterForMaya` folder from the extracted archive and paste it into one of the following locations:
 
    **Option A - User-specific installation (Recommended):**
    ```
-   ~/maya/ApplicationPlugins
+   $HOME/Autodesk/ApplicationPlugins
    ```
-   > **Note:** The `~` symbol represents your home directory. If the `ApplicationPlugins` directory doesn't exist, create it first:
+   > **Note:** The `$HOME` variable represents your home directory. If the `ApplicationPlugins` directory doesn't exist, create it first:
    > ```bash
-   > mkdir -p ~/maya/ApplicationPlugins
+   > mkdir -p $HOME/Autodesk/ApplicationPlugins
    > ```
+
+   **Final folder structure (Option A):**
+   ```
+   $HOME/
+   └── Autodesk/
+       └── ApplicationPlugins/
+                  └── gltf2ImporterForMaya/
+                                 ├── Contents
+                                 |       └── plugin
+                                 |              └── ...
+                                 └── PackageContents.xml
+   ```
 
    **Option B - System-wide installation (Requires root privileges):**
    ```
@@ -84,13 +116,25 @@
    > sudo cp -r gltf2ImporterForMaya /usr/autodesk/ApplicationPlugins/
    > ```
 
-3. **Restart Maya**: Launch Maya again
+   **Final folder structure (Option B):**
+   ```
+   /usr/
+      └── autodesk/
+            └── ApplicationPlugins/
+                        └── gltf2ImporterForMaya/
+                                    ├── Contents
+                                    |       └── plugin
+                                    |              └── ...
+                                    └── PackageContents.xml
+   ```
 
-4. The plugin should be enabled automatically
+   **Restart Maya**: Launch Maya again
 
-5. **Open Plugin Manager**: Go to **Windows > Settings/Preferences > Plug-in Manager**
+   The plugin should be enabled automatically
 
-6. Find `gltf2_importer_plugin.py` in the list and notice that both Load and Auto Load checkboxes are enabled
+   **Open Plugin Manager**: Go to **Windows > Settings/Preferences > Plug-in Manager**
+
+   Find `gltf2_importer_plugin.py` in the list and notice that both Load and Auto Load checkboxes are enabled
 
 ---
 

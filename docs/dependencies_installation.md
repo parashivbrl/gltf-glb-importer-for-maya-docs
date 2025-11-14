@@ -24,30 +24,29 @@ The plugin requires the following Python packages:
 
 ---
 
-## Troubleshooting
+## Installation Steps
 
-### Common Issues
+To install numpy for Maya, use the following commands based on your operating system. Replace `<Version>` with your Maya version (e.g., `2024`, `2025`).
 
-**Problem:** `mayapy` command not found
-- **Solution:** Make sure you're in the correct Maya bin directory and that Maya is properly installed
+### On Windows
 
-**Problem:** Permission denied on Linux/macOS
-- **Solution:** Try using `sudo` before the command
+(from a command window running as Administrator)
 
-**Problem:** pip not found
-- **Solution:** Maya's pip might need to be installed first:
-  ```
-  ./mayapy -m ensurepip --upgrade
-  ```
+```
+"C:\Program Files\Autodesk\Maya<Version>\bin\mayapy.exe" -m pip install numpy
+```
 
-### Getting Help
+### On macOS
 
-If you encounter issues:
+```
+/Applications/Autodesk/maya<Version>/Maya.app/Contents/bin/mayapy -m pip install numpy
+```
 
-1. Check that you're using the correct Maya version path
-2. Ensure Maya is completely closed during installation
-3. Try running Maya as administrator (Windows) or with sudo (Linux/macOS)
+### On Linux
+
+```
+sudo /usr/autodesk/maya<Version>/bin/mayapy -m pip install numpy
+```
 
 ---
 
-**Next Step:** Once dependencies are installed, proceed to [Plugin Installation](plugin_installation.md)
