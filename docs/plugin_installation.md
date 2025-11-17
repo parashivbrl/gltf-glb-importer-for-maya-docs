@@ -2,11 +2,10 @@
 
 ## Plugin Download
 
-**Download** the `gltf2ImporterForMaya_plugin.zip` from any of the below links:
+**Download** the `gltf2ImporterForMaya_plugin.zip` from the below link:
 
-  - [Gumroad page](https://gumroad.com/)
-  - [Artstation Marketplace](https://www.artstation.com/marketplace/game-dev/resources/dev-tools/scripts?section=trending&softwares=maya) 
-  - [Flipped Normals Marketplace](https://flippednormals.com/explore?tagIds=1&firstCategory=158&secondCategory=228)
+  - [Gumroad page](https://parashivbrl.gumroad.com/l/icglha)
+
 
 **Extract** the downloaded archive to a temporary location
 
