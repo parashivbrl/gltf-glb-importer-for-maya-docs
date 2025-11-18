@@ -19,7 +19,7 @@ The plugin supports the following Khronos and vendor extensions:
 
 **Note:** The implementation status of extensions varies. Some extensions are fully supported, while others may be partially implemented or have known limitations. Please test your specific use case and refer to the [limitations documentation](limitations.md) for details.
 
-If you encounter any issues with specific extensions, please [open an issue](https://github.com/username/repo/issues) with details about your use case and sample files. This helps us improve support for partially implemented extensions.
+If you encounter any issues with specific extensions, please [open an issue](https://github.com/parashivbrl/gltf-glb-importer-for-maya-docs/issues) with details about your use case and sample files. This helps us improve support for partially implemented extensions.
 
 ### Khronos Extensions (KHR_)
 

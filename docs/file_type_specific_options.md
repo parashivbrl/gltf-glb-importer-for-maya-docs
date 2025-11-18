@@ -20,13 +20,15 @@ The right side of the import dialog contains various import settings organized i
 - **No merging**: Discontinuous geometry along the UV boundary/seams (default option)
 - **Merge Vertices**: Combines duplicate vertices
 - **Import Skin Binding**: Imports skin binding data from the GLB/GLTF file (enabled by default)
+- **Import Blendshapes**: Imports blendshape targets from the GLB/GLTF file (enabled by default)
 
 ---
 
 ### Animation Settings
 
-- **Animation FPS**: Set the frame rate for imported animations (default: **"24 fps (Film)"**)
+- **Animation FPS**: Set the frame rate for imported animations (default: **"30 fps (NTSC)"**)
 - **Import Animations**: Creates Maya keyframes for translation, rotation, and scale animations
+- **Import Blendshape Animations**: Imports keyframes for blendshape weights (enabled by default)
 - **Open Time Editor Window**: Opens Time Editor window for animation playback and editing
 
 ---
@@ -35,7 +37,6 @@ The right side of the import dialog contains various import settings organized i
 
 - **Focus view on imported objects**: Automatically focuses the viewport camera on imported objects
 - **Animate framing**: Animates the camera framing to focus on imported objects
-- **Center view**: Centers the viewport view on imported objects
 
 ---
 

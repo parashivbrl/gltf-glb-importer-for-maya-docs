@@ -8,7 +8,7 @@ This guide will help you install the required dependencies for the glTF/GLB impo
 
 | Requirement | Details |
 |-------------|---------|
-| **Maya Version** | Maya 2024 or later|
+| **Maya Version** | Maya 2022 or later|
 | **Operating System** | Windows, macOS, or Linux |
 | **Python** | Python 3.7+ (automatically included with Maya 2022+) |
 
@@ -18,7 +18,7 @@ This guide will help you install the required dependencies for the glTF/GLB impo
 
 The plugin requires the following Python packages:
 
-- **[numpy](https://pypi.org/project/numpy/)** - Required for Maya 2024
+- **[numpy](https://pypi.org/project/numpy/)** - Required for Maya 2024 and below
 
 > **Note:** Maya 2025+ includes numpy by default.
 

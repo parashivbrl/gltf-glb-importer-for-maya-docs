@@ -22,7 +22,7 @@ Easily bring .gltf and .glb assets into Maya, enabling you to work with modern 3
 ## Quick Start Guide
 
 1. **[Install Dependencies](dependencies_installation.md)** - Set up required Python packages
-2. **[Install Plugin](plugin_installation.md)** - Add the plugin to your **ApplicationPlugins** folder
+2. **[Install Plugin](plugin_installation.md)** - Copy the plugin files into your Maya documents plug-ins folder
 3. **[Import Files](importing_gltf_glb_file.md)** - Start importing glTF/glb content
 4. **[Configure Options](file_type_specific_options.md)** - Customize import settings
 

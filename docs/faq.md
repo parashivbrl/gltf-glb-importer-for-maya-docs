@@ -22,7 +22,7 @@
     **For Maya 2024**: Yes, you need to install numpy. **For Maya 2025+**: No additional dependencies are required as numpy is included by default. Please follow the complete guide in [Dependencies Installation](dependencies_installation.md) for installation instructions.
 
 ??? question "Where should I install the plugin files?"
-    The plugin should be installed in ApplicationPlugins directory. Detailed installation paths and instructions are provided in the [Plugin Installation](plugin_installation.md) guide.
+    Extract the downloaded zip and copy the contents of the `scripts` folder to your user-specific Maya `.../scripts` directory, and the contents of the `plug-ins` folder to the matching `.../plug-ins` directory (create it if it does not exist). Refer to the platform-specific steps in [Plugin Installation](plugin_installation.md) for exact paths on Windows, macOS, and Linux.
 
 ## Import Questions
 
@@ -125,11 +125,13 @@
 ??? question "My animations aren't playing correctly"
     Animation issues can often be resolved by:
 
-    1. Checking [Animation Settings](animation_settings.md) configuration - Ensure "Import Animations" is enabled
-    2. Enabling "Open Time Editor Window" in [Animation Settings](animation_settings.md) to automatically open the Time Editor after import for easier access to animation clips
-    3. Using [Show Animation Clips](show_animation_clips.md) to manage multiple animations - All clips are organized in Maya's Time Editor
-    4. Verifying timeline settings in Maya
-    5. Note: Transform-based animations work better than joint-based animations - Sketchfab assets with rigged animations may require preprocessing (see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md))
+    1. Checking [Animation Settings](animation_settings.md) configuration — ensure "Import Animations" (and "Import Blendshape Animations" if needed) is enabled
+    2. Setting Maya's playback speed to **Real-time** in the Time Slider options so imported FPS is respected
+    3. Enabling "Open Time Editor Window" in [Animation Settings](animation_settings.md) to automatically open the Time Editor after import for easier access to animation clips
+    4. Using [Show Animation Clips](show_animation_clips.md) to manage multiple animations — all clips are organized in Maya's Time Editor
+    5. If you're on Maya 2023 or earlier and blendshape animations don't play, bake the clips via the Time Editor's **Bake** menu as described in the [Asset Compatibility and Workarounds](compatibility_and_workarounds.md#for-assets-with-animation-clips) guide
+    6. Verifying timeline settings in Maya
+    7. Note: Sketchfab assets with rigged animations may require preprocessing (see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md))
 
 ## Advanced Usage
 
@@ -166,7 +168,15 @@
     Detailed technical information is available in the [Technical Details](technical_details.md) section, including programmatic import using MEL and Python commands with all available import options.
 
 ??? question "How do I report bugs or request features?"
-    Please refer to the project repository for information on reporting issues and requesting new features.
+    You can report bugs or request features through the [GitHub Issues page](https://github.com/parashivbrl/gltf-glb-importer-for-maya-docs/issues). When reporting issues, please include:
+    
+    1. Maya version and operating system
+    2. Asset source (Sketchfab, custom export, etc.)
+    3. File size and complexity details
+    4. Specific error messages or unexpected behavior
+    5. Sample files (when possible and appropriate)
+    6. Output logs from the Maya Script Editor
+    7. Steps to reproduce the issue
 
 ??? question "Are there example files I can use for testing?"
     The [Khronos glTF Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) provides official test assets that work well with the plugin. These are recommended for testing your installation and understanding the import process. Assets exported from Maya using Babylon exporter or from Blender using the built-in glTF 2.0 addon also work reliably.
