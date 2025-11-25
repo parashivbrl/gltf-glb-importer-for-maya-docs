@@ -1,4 +1,4 @@
-# gltf-glb-importer-for-maya-docs
+# gltf/glb Importer for Maya docs
 A glTF and GLB importer for Autodesk Maya.
 
 **Download** `gltf2ImporterForMaya_Plugin_1_0_0.zip` from the [Gumroad page](https://parashivbrl.gumroad.com/l/icglha)
