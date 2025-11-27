@@ -1,5 +1,7 @@
 # Plugin Installation
 
+<iframe width="100%" height="450" style="max-width: 800px; display: block; margin: 0 auto;" src="https://www.youtube.com/embed/0Uzvw5Tr1ys" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Plugin Download
 
 - **Download** `gltf2ImporterForMaya_Plugin_1_0_0.zip` from the [Gumroad page](https://parashivbrl.gumroad.com/l/icglha)
