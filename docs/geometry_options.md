@@ -21,10 +21,11 @@ Controls how geometry vertices are processed during import:
 **Use Exact Inverse Bind Matrices**
 
 - When enabled, uses the exact inverse bind matrices from the GLTF/GLB file for skin binding calculations
+- Primarily useful for auto-generated assets from platforms like Sketchfab that may have non-standard bind pose configurations
 - Provides more accurate skeletal deformation that matches the original file's joint transformations
 - Only available when **Import Skin Binding** is enabled
 - Disable if you experience issues with skin binding or need Maya to recalculate bind matrices automatically
-- Most users should leave this disabled unless experiencing deformation accuracy issues
+- Most users should leave this disabled unless importing auto-generated assets with deformation accuracy issues
 
 **Import Blendshapes**
 

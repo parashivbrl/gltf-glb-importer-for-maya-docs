@@ -20,7 +20,7 @@ The right side of the import dialog contains various import settings organized i
 - **No merging**: Discontinuous geometry along the UV boundary/seams (default option)
 - **Merge Vertices**: Combines duplicate vertices
 - **Import Skin Binding**: Imports skin binding data from the GLB/GLTF file (enabled by default)
-- **Use Exact Inverse Bind Matrices**: Uses exact inverse bind matrices from the file for more accurate skeletal deformation
+- **Use Exact Inverse Bind Matrices**: Uses exact inverse bind matrices for auto-generated assets from platforms like Sketchfab
 - **Import Blendshapes**: Imports blendshape targets from the GLB/GLTF file (enabled by default)
 
 ---
