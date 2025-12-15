@@ -20,6 +20,7 @@ The right side of the import dialog contains various import settings organized i
 - **No merging**: Discontinuous geometry along the UV boundary/seams (default option)
 - **Merge Vertices**: Combines duplicate vertices
 - **Import Skin Binding**: Imports skin binding data from the GLB/GLTF file (enabled by default)
+- **Use Exact Inverse Bind Matrices**: Uses exact inverse bind matrices from the file for more accurate skeletal deformation
 - **Import Blendshapes**: Imports blendshape targets from the GLB/GLTF file (enabled by default)
 
 ---
@@ -48,6 +49,12 @@ The right side of the import dialog contains various import settings organized i
   C:\Users\[User name]\Documents\maya\projects\default\sourceimages\gltf_textures
   ```
 - **Relative Extraction**: Images will be extracted relative to GLB/GLTF file location when enabled
+
+---
+
+### UI Options
+
+- **Dock Material_Animation UIs by default**: Automatically docks Material and Animation UI panels to the Maya interface when enabled
 
 ---
 

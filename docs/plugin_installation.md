@@ -4,7 +4,7 @@
 
 ## Plugin Download
 
-- **Download** `gltf2ImporterForMaya_Plugin_1_0_0.zip` from the [Gumroad page](https://parashivbrl.gumroad.com/l/icglha)
+- **Get** the plugin from the [Gumroad page](https://www.gltf2maya.store)
 - **Extract** the archive to a temporary location
 - Inside the zip you will find two folders:
   - `plug-ins/`
