@@ -4,7 +4,7 @@
 
 ## Plugin Download
 
-- **Get** the plugin from the [Gumroad page](https://www.gltf2maya.store)
+- **Get** the plugin from the [Gumroad page](https://bit.ly/4agx5T2)
 - **Extract** the archive to a temporary location
 - Inside the zip you will find two folders:
   - `plug-ins/`

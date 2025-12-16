@@ -1,7 +1,9 @@
 # gltf/glb Importer for Maya docs
 A glTF and GLB importer for Autodesk Maya.
 
-**Get** the plugin from the [Here](https://www.gltf2maya.store)
+**Visit** the official website: [https://www.gltf2maya.store](https://www.gltf2maya.store)
+
+**Get** the plugin from the [Gumroad](https://bit.ly/4agx5T2)
 
 Refer to this [documentation site](https://parashivbrl.github.io/gltf-glb-importer-for-maya-docs/plugin_installation/) for installation steps and details about the plugin.
 
