@@ -52,12 +52,6 @@ The right side of the import dialog contains various import settings organized i
 
 ---
 
-### UI Options
-
-- **Dock Material_Animation UIs by default**: Automatically docks Material and Animation UI panels to the Maya interface when enabled
-
----
-
 ## Common to All File Types
 
 ### General Options
