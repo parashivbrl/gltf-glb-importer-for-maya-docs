@@ -11,7 +11,7 @@ While the glTF/GLB Importer for Maya successfully handles most files that adhere
 ## General Plugin Limitations
 
 ### Geometry Processing
-- **Merge Vertices Side Effects**: When **Merge Vertices** is enabled during import, UVs can fail or distort because vertices that share the same position are de-duplicated, removing the seams needed to keep separate UV shells.
+- **Merge Vertices Side Effects**: When **Merge Vertices** is enabled during import, UV creation can fail in rare edge cases. When it works, UVs are created correctly with proper seams. Without merging, UVs are always created reliably.
 ### Blendshape Animations (Maya 2023 and below)
 - Blendshape targets and animation curves import, but in Maya 2023 and earlier they may not play back automatically.
 - Open the **Time Editor** and use the **Bake** menu options (e.g., *Bake to New Clip*, *Bake to Scene*, *Bake to Scene and Delete*, or *Flatten Layers*) to bake the clips back to standard curves so playback works.
@@ -28,20 +28,16 @@ While the glTF/GLB Importer for Maya successfully handles most files that adhere
 - **Texture Format Support**: Some texture formats such as .webp and Compressed BasisU images may not be supported
 - **Material Complexity**: Advanced PBR features may not have direct Maya equivalents
 
-
 ---
 
 ## Sketchfab Asset Import Issues
 
-Sketchfab assets, particularly those that are **automatically generated**, present specific challenges:
+Sketchfab assets, particularly those that are **automatically generated**, may present specific challenges due to non-standard bind pose configurations:
 
-### Hierarchical Structure Problems
-- **Different Node Hierarchy**: Sketchfab's auto-generated files follow a different hierarchical structure than standard glTF exporters
-- **Rigged Asset Import Issues**: Due to the non-standard hierarchy, rigged characters and animated objects may not import properly
-
-### Animation-Specific Problems
-- **Skinning Data**: Vertex skinning information may not transfer correctly from Sketchfab's format
-- **Animation Curves**: Complex animation curves may be simplified or corrupted during the conversion process
+### Rigged Asset Deformation Issues
+- **Skeletal Deformation Accuracy**: Auto-generated files may have non-standard bind pose configurations that can cause deformation issues when imported with default settings
+- **Workaround**: Enable the **Use Exact Inverse Bind Matrices** option (available under skin binding settings) to use the exact inverse bind matrices from the glTF/GLB file, which provides more accurate skeletal deformation matching the original file's joint transformations
+- **Note**: This option is only available when **Import Skin Binding** is enabled
 
 ---
 

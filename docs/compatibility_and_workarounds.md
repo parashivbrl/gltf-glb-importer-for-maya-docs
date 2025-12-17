@@ -8,21 +8,28 @@ This document covers assets that work well with the glTF/GLB Importer for Maya a
 
 ## What Works Well
 
-- **Khronos Sample Assets**: Most sample assets from the official [Khronos glTF Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) import properly without any issues when testing the plugin
-- **Standard glTF 2.0 Assets**: Files exported using proper glTF exporters that follow Khronos specifications
-- **Maya-exported Assets**: Assets created inside Maya and exported using the Babylon exporter import properly
-- **Blender-exported Assets**: Assets created inside Blender and exported using the built-in glTF 2.0 addon import properly
-- **In-house Created Assets**: Extensively tested assets created in-house work perfectly with both Maya/Babylon exporter and Blender/glTF 2.0 exporter workflows
-- **Static Assets**: Models without animations import correctly with proper geometry, materials, and textures
-- **Transform-based Animations**: Assets with animations applied **only on transform nodes** (rather than joints)
-- **PBR Materials**: Standard physically-based rendering materials convert properly to Maya's material system
+- **Standard glTF 2.0 Compliant Files**: Assets that follow the [Khronos glTF 2.0 specifications](https://www.khronos.org/gltf/) import reliably
+- **Geometry and Materials**: Meshes, PBR materials, and textures import correctly
+- **Animations**: Transform animations, skeletal (rigged) animations, and blendshape animations are fully supported
+- **Standard Exporters**: Files from widely-used glTF exporters (Blender, Maya/Babylon, etc.) are well-supported
 
 ---
 
 ## Recommended Workarounds
 
 ### For Sketchfab Assets with Rigged Animations
-To properly import Sketchfab assets with rigged animations, use this Blender preprocessing workflow:
+
+If you experience deformation accuracy issues with auto-generated Sketchfab assets:
+
+1. **Enable Use Exact Inverse Bind Matrices**: In the import options under **Geometry Options**, enable **Use Exact Inverse Bind Matrices** (only available when **Import Skin Binding** is enabled)
+2. **Import the Asset**: This option uses the exact inverse bind matrices from the glTF/GLB file, providing more accurate skeletal deformation that matches the original file's joint transformations
+3. **If Issues Persist**: Disable the option to let Maya recalculate bind matrices automatically
+
+> **Note**: Most users should leave this option disabled unless importing auto-generated assets with deformation accuracy issues from platforms like Sketchfab that may have non-standard bind pose configurations.
+
+#### Alternative Blender Preprocessing Workflow
+
+If the above doesn't resolve the issue, use this Blender preprocessing workflow:
 
 1. **Import into Blender**: Import the original Sketchfab glTF/GLB file into Blender
 2. **Select Rigged Meshes**: In the Outliner, select all meshes that have skin weights applied (identify these by looking for Vertex Groups in the mesh properties)
@@ -30,8 +37,6 @@ To properly import Sketchfab assets with rigged animations, use this Blender pre
 3. **Clear Parent Relationship**: Press `Alt + P` and choose **"Clear and Keep Transformation"**
 4. **Re-export**: Export the file in glTF/GLB format from Blender
 5. **Import into Maya**: The processed file should now import correctly into Maya
-
-> **Note**: This workaround doesn't work for all Sketchfab assets, but significantly improves compatibility for rigged characters and animated objects.
 
 ### Alternative Sketchfab Workarounds:
 
