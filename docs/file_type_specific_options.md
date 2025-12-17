@@ -2,6 +2,8 @@
 
 The right side of the import dialog contains various import settings organized into collapsible sections. Here we focus on the **File Type Specific Options** which provide specialized controls for glTF/glb imports.
 
+These options are specific to the importer in the File Type Specific Options section, available only when the File Type "gltf2" is selected from the dropdown in the import dialog.
+
 ---
 
 ## File Type Specific Options
