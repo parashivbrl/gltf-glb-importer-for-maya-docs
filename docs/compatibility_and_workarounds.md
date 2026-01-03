@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document covers assets that work well with the glTF/GLB Importer for Maya and provides practical solutions for common import challenges.
+This document covers assets that work well with the glTF Importer for Maya and provides practical solutions for common import challenges.
 
 ---
 
@@ -39,6 +39,12 @@ If the above doesn't resolve the issue, use this Blender preprocessing workflow:
 5. **Import into Maya**: The processed file should now import correctly into Maya
 
 ### Alternative Sketchfab Workarounds:
+
+- **Disable Complex Features**: If you're experiencing issues with rigged or animated Sketchfab assets, you can disable the following options all at once in the import dialog:
+  - **Import Skin Binding**: Disable to import only static geometry without skeleton/deformation data
+  - **Import Blendshapes**: Disable to skip blendshape targets
+  - **Import Animations**: Disable to import only static meshes without animation keyframes
+  - This approach imports only the base geometry and materials, allowing you to work with static meshes and avoid potential deformation or animation issues
 
 - **Manual Orientation Correction**: Manually adjust object transforms after import
 

@@ -2,7 +2,10 @@
 
 When importing GLTF/GLB files, you can configure animation settings to control how animations are processed and displayed.
 
-> **Note:** Before previewing imported animation, set Maya's Time Slider playback speed to **Real-time** (`Playback Speed > Real-time`). The other options—**Play Every Frame, Free** and **Play Every Frame, Max Real-time**—ignore the FPS chosen below and can make animation appear too fast or too slow.
+![Screenshot](img/image_animation_settings.png)
+
+> **Note:** Before previewing imported animation, set Maya's Time Slider playback speed to **Real-time** (`Playback Speed > Real-time`) by **Right clicking** on the **Time slider**. The other options—**Play Every Frame, Free** and **Play Every Frame, Max Real-time**—ignore the FPS chosen below and can make animation appear too fast or too slow.
+![Screenshot](img/image_animation_settings_playback_speed.png)
 
 ## Animation FPS
 

@@ -1,6 +1,6 @@
 # Dependencies Installation
 
-This guide will help you install the required dependencies for the glTF/GLB importer plugin to work properly with Maya.
+This guide will help you install the required dependencies for the glTF Importer for Maya plugin to work properly with Maya.
 
 ---
 
@@ -26,15 +26,18 @@ The plugin requires the following Python packages:
 
 ## Installation Steps
 
-To install numpy for Maya, use the following commands based on your operating system. Replace `<Version>` with your Maya version (e.g., `2024`, `2025`).
+To install numpy for Maya, use the following commands based on your operating system. Replace `<Version>` with your Maya version (e.g., `2022`, `2024`).
 
 ### On Windows
 
 (from a command window running as Administrator)
 
 ```
-"C:\Program Files\Autodesk\Maya<Version>\bin\mayapy.exe" -m pip install numpy
+"C:\Program Files\Autodesk\Maya<Version>\bin\mayapy -m pip install numpy"
 ```
+For Example:
+
+![Screenshot](img/image_dependency_install.png)
 
 ### On macOS
 

@@ -2,6 +2,8 @@
 
 When importing GLTF/GLB files, you can configure various material settings to control how materials and geometry are processed.
 
+![Screenshot](img/image_material_settings.png)
+
 ## Shader Type
 
 Controls which shader system is used for imported materials:
@@ -91,3 +93,14 @@ Controls whether materials are created during import:
 - Useful when you want to manually assign materials or use existing materials in your scene
 
 - When enabled (default), materials are automatically created based on the GLTF/GLB file data
+
+---
+
+## Viewing Advanced Material Properties
+
+To see advanced material properties like **sheen**, **iridescence**, **clearcoat**, **transmission**, and other PBR features, you need to:
+
+- Start **Arnold** in the viewport renderer, or
+- Take a render using Arnold
+
+Maya's default viewport renderer may not display all advanced material properties correctly, so using Arnold is necessary to visualize these effects. This applies to materials imported with Standard Surface, Arnold, and OpenPBR shader types.

@@ -14,6 +14,7 @@ nav:
   - Material Settings: material_settings.md
   - Geometry Options: geometry_options.md
   - Animation Settings: animation_settings.md
+  - Viewport Options: viewport_options.md
   - Image Extraction: image_extraction.md
   - glTF2.0 Menu: gltf2_0_menu.md
   - Show Material Variants: show_material_variants.md
@@ -77,7 +78,7 @@ extra:
       link: https://linkedin.com/in/parashivamurthy-b-n
       name: Connect on LinkedIn
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/QuX9yuYxBp
+      link: https://discord.gg/dtSxPaQ2
       name: Join our Discord community
     - icon: fontawesome/brands/github
       link: https://github.com/parashivbrl

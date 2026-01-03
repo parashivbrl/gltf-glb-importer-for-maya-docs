@@ -1,6 +1,6 @@
 # Importing the glTF/glb file
 
-This guide walks you through the process of importing glTF and glb files into Autodesk Maya using the glTF/glb importer.
+This guide walks you through the process of importing glTF and glb files into Autodesk Maya using the glTF Importer for Maya plugin.
 
 ---
 

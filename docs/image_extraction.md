@@ -2,6 +2,8 @@
 
 When importing glTF/GLB files, you can choose where the extracted texture maps are saved by using the "Use Relative Path" checkbox option.
 
+![Screenshot](img/image_image_extraction.png)
+
 ## Texture Map Save Locations
 
 ### Use Relative Path Unchecked (Default)

@@ -1,12 +1,13 @@
-# glTF and glb Importer for Maya
+# glTF Importer for Maya
 
 ![Screenshot](img/image_home.png)
 
-Explore the **glTF and glb Importer for Maya** user guide.
+Explore the **glTF Importer for Maya** user guide.
 
 Easily bring .gltf and .glb assets into Maya, enabling you to work with modern 3D formats while preserving materials, animations, scene structure, and more all within Maya’s robust environment.
-**Visit our website**: [https://www.gltf2maya.store](https://www.gltf2maya.store)
+
 ---
+Visit our website: [https://www.gltf2maya.store](https://www.gltf2maya.store)
 
 ## Key Features
 

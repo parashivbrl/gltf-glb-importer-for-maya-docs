@@ -4,6 +4,8 @@ The right side of the import dialog contains various import settings organized i
 
 These options are specific to the importer in the File Type Specific Options section, available only when the File Type "gltf2" is selected from the dropdown in the import dialog.
 
+![Screenshot](img/image_file_specific_options.png)
+
 ---
 
 ## File Type Specific Options

@@ -2,11 +2,11 @@
 
 ## General Questions
 
-??? question "What is the glTF/glb importer for Maya?"
-    The glTF/glb importer for Maya is a plugin that allows you to import glTF (GL Transmission Format) and glb (Binary glTF) files directly into Autodesk Maya. This enables seamless integration of 3D assets that follow the glTF standard into your Maya workflow.
+??? question "What is the glTF Importer for Maya?"
+    The glTF Importer for Maya is a plugin that allows you to import glTF (GL Transmission Format) and glb (Binary glTF) files directly into Autodesk Maya. This enables seamless integration of 3D assets that follow the glTF standard into your Maya workflow.
 
 ??? question "What versions of Maya are supported?"
-    The plugin supports **Maya 2024 or later**. For Maya 2024, you'll need to install numpy separately. Maya 2025+ includes numpy by default. See the [Dependencies Installation](dependencies_installation.md) page for detailed requirements.
+    The plugin supports **Maya 2022 or later**. For Maya 2024 and earlier versions, you'll need to install numpy separately. Maya 2025+ includes numpy by default. See the [Dependencies Installation](dependencies_installation.md) page for detailed requirements.
 
 ## Installation Questions
 
@@ -19,7 +19,7 @@
     4. Following the step-by-step instructions in [Plugin Installation](plugin_installation.md)
 
 ??? question "Do I need to install additional dependencies?"
-    **For Maya 2024**: Yes, you need to install numpy. **For Maya 2025+**: No additional dependencies are required as numpy is included by default. Please follow the complete guide in [Dependencies Installation](dependencies_installation.md) for installation instructions.
+    **For Maya 2024 and earlier versions**: Yes, you need to install numpy. **For Maya 2025+**: No additional dependencies are required as numpy is included by default. Please follow the complete guide in [Dependencies Installation](dependencies_installation.md) for installation instructions.
 
 ??? question "Where should I install the plugin files?"
     Extract the downloaded zip and copy the contents of the `scripts` folder to your user-specific Maya `.../scripts` directory, and the contents of the `plug-ins` folder to the matching `.../plug-ins` directory (create it if it does not exist). Refer to the platform-specific steps in [Plugin Installation](plugin_installation.md) for exact paths on Windows, macOS, and Linux.
@@ -40,12 +40,21 @@
     3. **Missing textures**: Verify all referenced textures are available
     4. **Large file size**: Very large files may require specific settings
     5. **Asset source**: Assets from Khronos Sample Assets, Maya/Babylon exporter, or Blender/glTF 2.0 exporter typically work best
+    6. **Scale issues**: If imported assets appear too large (common with Sketchfab assets), use the **Unit Scale** option in [Geometry Options](geometry_options.md) and select **1.0** to scale down the geometry
 
 ??? question "Can I import animations from glTF/glb files?"
     Yes! The plugin supports animation import including skeletal animations, transform-based animations, and morph targets. Configure your animation settings using the [Animation Settings](animation_settings.md) options before importing. You can enable "Open Time Editor Window" to automatically open Maya's Time Editor after import for immediate access to animation clips. You can also use the [Show Animation Clips](show_animation_clips.md) feature to manage multiple animation clips, which are automatically organized in Maya's Time Editor.
 
 ??? question "How do I handle material variants?"
     Material variants are supported through the [Show Material Variants](show_material_variants.md) feature. This allows you to switch between different material configurations defined in your glTF file.
+
+??? question "My imported asset from Sketchfab appears too large or has deformation issues"
+    Sketchfab assets, especially auto-generated ones, may have scale or deformation issues. Try these solutions:
+    
+    1. **Scale issues**: Use the **Unit Scale** option in [Geometry Options](geometry_options.md) and select **1.0** to scale down the geometry
+    2. **Deformation issues**: Enable **Use Exact Inverse Bind Matrices** in [Geometry Options](geometry_options.md) (requires **Import Skin Binding** to be enabled)
+    3. **Import only static geometry**: Disable **Import Skin Binding**, **Import Blendshapes**, and **Import Animations** all at once to import only static meshes and materials, avoiding potential deformation or animation issues
+    4. For more detailed workarounds, see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md)
 
 ## Material Questions
 
@@ -85,7 +94,7 @@
     2. **Geometry complexity**: High-poly models require more processing
     3. **Texture resolution**: Large textures increase import time
     4. **Complex rigged assets**: Assets with complex rigging and skin binding may take longer due to the complex skin binding process
-    5. **Computer specifications**: Available RAM and CPU power
+    5. **Computer specifications**: Available RAM and CPU/GPU power
 
 ??? question "Can I optimize import performance?"
     Yes, there are several ways to optimize import performance depending on your needs:
@@ -121,6 +130,7 @@
     3. Try importing a simpler test file first - Test with assets from the [Khronos Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets)
     4. Check Maya's script editor for detailed error information
     5. If importing Sketchfab assets, see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) for preprocessing steps
+    6. For Sketchfab assets with issues, try disabling **Import Skin Binding**, **Import Blendshapes**, and **Import Animations** all at once to import only static geometry and materials
 
 ??? question "My animations aren't playing correctly"
     Animation issues can often be resolved by:
@@ -132,6 +142,20 @@
     5. If you're on Maya 2023 or earlier and blendshape animations don't play, bake the clips via the Time Editor's **Bake** menu as described in the [Asset Compatibility and Workarounds](compatibility_and_workarounds.md#for-assets-with-animation-clips) guide
     6. Verifying timeline settings in Maya
     7. Note: Sketchfab assets with rigged animations may require preprocessing (see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md))
+
+??? question "Why do imported objects disappear when I enable shaded display with texture maps (press 6)?"
+    If imported meshes or geometries disappear when you enable shaded display with texture maps (pressing **6**), this can be caused by:
+
+    1. **Backface Culling**: Change the **Backface Culling** setting to **"off"** in the mesh's shape node under the **Mesh Component Display** section. This will allow you to see both sides of the geometry
+    2. **Opacity Connection**: The shader's **Opacity** attribute may be connected, causing transparency issues. You can temporarily disconnect the opacity connection in the shader's attribute editor to see the geometry
+    3. **Viewport Renderer**: Start **Arnold** in the viewport to see the render result, which may display the geometry correctly
+
+    Additionally, to see advanced material properties like **sheen**, **iridescence**, **clearcoat**, **transmission**, and other PBR features, you need to:
+    
+    - Start **Arnold** in the viewport renderer, or
+    - Take a render using Arnold
+    
+    Maya's default viewport renderer may not display all advanced material properties correctly, so using Arnold is necessary to visualize these effects.
 
 ## Advanced Usage
 
@@ -157,7 +181,6 @@
 ??? question "What's the difference between 'No merging' and 'Merge Vertices' geometry options?"
     - **No merging** (default): Preserves original mesh structure, keeps components separate along UV seams, maintains material assignments per mesh
     - **Merge Vertices**: Automatically combines vertices that share the same position, can reduce geometry complexity but may affect color sets
-    - **Import Skin Binding**: When enabled (default), imports skin binding data and applies it to geometry with skeleton/deformation data. When disabled, ignores skin binding data and imports static geometry only - useful when you don't need animation or deformation
 
 ??? question "Can I modify import settings after import?"
     Import settings apply during the import process. To change settings, you'll need to re-import the file with new configuration options. However, you can modify materials, apply material variants using [Show Material Variants](show_material_variants.md), and manage animation clips using [Show Animation Clips](show_animation_clips.md) after import.
@@ -168,7 +191,7 @@
     Detailed technical information is available in the [Technical Details](technical_details.md) section, including programmatic import using MEL and Python commands with all available import options.
 
 ??? question "How do I report bugs or request features?"
-    You can report bugs or request features through the [GitHub Issues page](https://github.com/parashivbrl/gltf-glb-importer-for-maya-docs/issues). When reporting issues, please include:
+    You can report bugs, request features, share suggestions, view announcements, and get support by joining the [Discord server](https://discord.gg/dtSxPaQ2). When reporting issues, please include:
     
     1. Maya version and operating system
     2. Asset source (Sketchfab, custom export, etc.)
@@ -183,4 +206,4 @@
 
 ---
 
-*If your question isn't answered here, please check the other documentation pages or refer to the project's issue tracker for additional support.* 
+*If your question isn't answered here, please check the other documentation pages or join the [Discord server](https://discord.gg/dtSxPaQ2) for additional support.* 

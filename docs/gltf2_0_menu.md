@@ -14,7 +14,11 @@ The glTF2.0 menu provides access to various features and tools for working with 
 
 Access this dialog by clicking the option box (⬜) next to **Material Animation Tools** in the glTF2.0 menu.
 
+![Screenshot](img/image_material_animation_tools_option_box.png)
+
 **Dock UI by default**
+
+![Screenshot](img/image_material_animation_tools_options.png)
 
 - When enabled (default), the Material Variants Selector and Animation Clips Manager UIs will be automatically docked to the Maya interface when opened
 - When disabled, the UIs will appear as floating windows
@@ -25,4 +29,4 @@ Access this dialog by clicking the option box (⬜) next to **Material Animation
 Provides access to the online documentation.
 
 ## About
-Shows information about the GLB/GLTF importer plugin 
+Shows information about the glTF Importer for Maya plugin 

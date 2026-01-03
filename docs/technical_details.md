@@ -36,6 +36,11 @@ The plugin supports various import options that can be specified in the `options
 - **importAO**: Whether to import Ambient Occlusion from ORM texture (R channel) and multiply with base color (default: 0/false)
 - **importMaterials**: Whether to import materials/shaders during import (default: 1/true)
 - **mergeVertices**: Whether to merge vertices (default: 0/false)
+- **unitScale**: Specifies the unit scale factor for imported geometry (default: "Auto")
+    *Valid values:* "Auto", "1.0", "100.0"
+    - "Auto": Automatically determines the appropriate scale based on the file
+    - "1.0": Applies a unit scale of 1.0, useful for scaling down assets from sources like Sketchfab that may have larger asset scales
+    - "100.0": Applies a unit scale of 100.0 for scaling up geometry
 - **importSkinBinding**: Whether to import skin binding (skinCluster creation) during import (default: 1/true)
 - **importBlendshapes**: Imports blendshape targets (default: 1/true)
 - **animationFPS**: Frame rate for animation import (default: 30)
@@ -51,7 +56,7 @@ Options are specified as semicolon-separated key-value pairs: `"key1=value1;key2
 
 #### Example with Multiple Options
 ```mel
-file -import -type "glTF2" -namespace "FILE_NAME" -options "shaderType=Standard Surface;mergeVertices=0;shadingOption=Use Normal Data;useRelativePath=0;openTimeEditor=0;importAnimations=1;importBlendshapeAnimations=0;importAO=0;importMaterials=1;importSkinBinding=1;importBlendshapes=1;focusView=1;animate=0;animationFPS=30;" "PATH_TO_GLTF";
+file -import -type "glTF2" -namespace "FILE_NAME" -options "shaderType=Standard Surface;mergeVertices=0;unitScale=Auto;shadingOption=Use Normal Data;useRelativePath=0;openTimeEditor=0;importAnimations=1;importBlendshapeAnimations=0;importAO=0;importMaterials=1;importSkinBinding=1;importBlendshapes=1;focusView=1;animate=0;animationFPS=30;" "PATH_TO_GLTF";
 ```
 
 ### Integration with Custom Tools

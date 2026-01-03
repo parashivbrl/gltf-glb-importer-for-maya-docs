@@ -43,7 +43,9 @@ Sketchfab assets, particularly those that are **automatically generated**, may p
 
 ## Reporting Issues
 
-If you encounter limitations not listed here, please report them through the [GitHub Issues page](https://github.com/parashivbrl/gltf-glb-importer-for-maya-docs/issues) and provide:
+If you encounter limitations not listed here, please join the [Discord server](https://discord.gg/dtSxPaQ2) to report issues, share suggestions, view announcements, and get support.
+
+When reporting issues, please provide:
 
 - Maya version and operating system
 
@@ -61,4 +63,4 @@ If you encounter limitations not listed here, please report them through the [Gi
 
 ---
 
-For the most up-to-date information on plugin improvements and bug fixes, check the project's release notes and documentation updates. 
+For the most up-to-date information on plugin improvements and bug fixes, check the Discord server announcements and documentation updates. 
