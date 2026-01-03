@@ -2,7 +2,7 @@ site_name: glTF and glb Importer for Maya - Documentation
 site_url: https://parashivbrl.github.io/gltf-glb-importer-for-maya-docs/
 site_description: Complete documentation for importing glTF and glb files into Autodesk Maya. Import 3D models, materials, animations, and textures with this powerful Maya plugin.
 site_author: Parashivamurthy B N
-copyright: 2025 glTF/glb Importer for Maya
+copyright: 2026 glTF/glb Importer for Maya
 
 nav:
   - Home: index.md
