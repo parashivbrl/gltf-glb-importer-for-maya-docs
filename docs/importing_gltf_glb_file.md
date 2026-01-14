@@ -25,7 +25,7 @@ The Import dialog will open, providing you with several options and settings for
 
 ## File Selection
 
-- **Files of type**: Ensure "glTF2" is selected from the dropdown
+- **Files of type**: Ensure "glTF2.0 Import" is selected from the dropdown
 - **Look in**: Navigate to the folder containing your glTF/glb file
 - **File name**: Select or type the name of your glTF/glb file  
 

@@ -21,32 +21,32 @@ The plugin supports the following Khronos and vendor extensions:
 
 If you encounter any issues with specific extensions, please join the [Discord server](https://discord.gg/dtSxPaQ2) to report issues, share details about your use case and sample files. This helps us improve support for partially implemented extensions.
 
-### Khronos Extensions (KHR_)
+### Khronos Extensions (KHR\_)
 
-| Extension | Description |
-|-----------|-------------|
-| `KHR_draco_mesh_compression` | Geometry compression for reduced file sizes |
-| `KHR_lights_punctual` | Point, spot, and directional lights |
-| `KHR_materials_anisotropy` | Anisotropic material reflection |
-| `KHR_materials_clearcoat` | Clear coat material layer |
-| `KHR_materials_diffuse_transmission` | Diffuse light transmission through materials |
-| `KHR_materials_dispersion` | Chromatic dispersion effects |
-| `KHR_materials_emissive_strength` | Enhanced emissive material strength |
-| `KHR_materials_ior` | Index of refraction for materials |
-| `KHR_materials_iridescence` | Iridescent material effects |
-| `KHR_materials_sheen` | Fabric-like sheen material properties |
-| `KHR_materials_specular` | Specular workflow materials |
-| `KHR_materials_transmission` | Light transmission through materials |
-| `KHR_materials_unlit` | Unlit/constant color materials |
-| `KHR_materials_variants` | Multiple material variants per mesh |
-| `KHR_materials_volume` | Transmission volume material properties |
-| `KHR_mesh_quantization` | Reduced precision vertex attributes for smaller file sizes |
-| `KHR_texture_transform` | Texture coordinate transformations |
+| Extension                            | Description                                                |
+| ------------------------------------ | ---------------------------------------------------------- |
+| `KHR_draco_mesh_compression`         | Geometry compression for reduced file sizes (Windows only) |
+| `KHR_lights_punctual`                | Point, spot, and directional lights                        |
+| `KHR_materials_anisotropy`           | Anisotropic material reflection                            |
+| `KHR_materials_clearcoat`            | Clear coat material layer                                  |
+| `KHR_materials_diffuse_transmission` | Diffuse light transmission through materials               |
+| `KHR_materials_dispersion`           | Chromatic dispersion effects                               |
+| `KHR_materials_emissive_strength`    | Enhanced emissive material strength                        |
+| `KHR_materials_ior`                  | Index of refraction for materials                          |
+| `KHR_materials_iridescence`          | Iridescent material effects                                |
+| `KHR_materials_sheen`                | Fabric-like sheen material properties                      |
+| `KHR_materials_specular`             | Specular workflow materials                                |
+| `KHR_materials_transmission`         | Light transmission through materials                       |
+| `KHR_materials_unlit`                | Unlit/constant color materials                             |
+| `KHR_materials_variants`             | Multiple material variants per mesh                        |
+| `KHR_materials_volume`               | Transmission volume material properties                    |
+| `KHR_mesh_quantization`              | Reduced precision vertex attributes for smaller file sizes |
+| `KHR_texture_transform`              | Texture coordinate transformations                         |
 
-### Vendor Extensions (EXT_)
+### Vendor Extensions (EXT\_)
 
-| Extension | Description |
-|-----------|-------------|
+| Extension                 | Description               |
+| ------------------------- | ------------------------- |
 | `EXT_mesh_gpu_instancing` | GPU-based mesh instancing |
 
 ---
@@ -68,6 +68,7 @@ The plugin can process the following image formats for textures:
 
 - **JPEG** (`.jpg`, `.jpeg`) - Compressed raster images
 - **PNG** (`.png`) - Lossless compressed raster images with transparency support
+- **WEBP** (`.webp`) - WIP
 
 ---
 

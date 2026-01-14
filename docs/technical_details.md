@@ -2,12 +2,12 @@
 
 ## Plugin Usage
 
-Once the plugin is successfully installed, it adds a new file type **"glTF2"** to Maya's import options. This enables users to import GLTF and GLB files directly through Maya's file import system or programmatically using MEL and Python commands.
+Once the plugin is successfully installed, it adds a new file type **"glTF2.0 Import"** to Maya's import options. This enables users to import GLTF and GLB files directly through Maya's file import system or programmatically using MEL and Python commands.
 
 ### MEL Command
 
 ```mel
-file -import -type "glTF2" -options "shaderType=Standard Surface;shadingOption=Use Normal Data;" "path_to_gltf";
+file -import -type "glTF2.0 Import" -options "shaderType=Standard Surface;shadingOption=Use Normal Data;" "path_to_gltf";
 ```
 
 ### Python Command
@@ -15,9 +15,9 @@ file -import -type "glTF2" -options "shaderType=Standard Surface;shadingOption=U
 ```python
 import maya.cmds as cmds
 
-cmds.file({file_path}, 
-          i=True, 
-          type="glTF2",
+cmds.file({file_path},
+          i=True,
+          type="glTF2.0 Import",
           options="shaderType=Standard Surface;shadingOption=Use Normal Data;"
           )
 ```
@@ -27,23 +27,23 @@ cmds.file({file_path},
 The plugin supports various import options that can be specified in the `options` parameter as a semicolon-separated string in "key=value" format. **All options are optional** and will use their default values if not specified:
 
 - **shaderType**: Specifies the shader type to use (default: "Standard Surface")
-    *Valid values:* "Standard Surface", "Arnold", "OpenPBR", "Stingray"
+  _Valid values:_ "Standard Surface", "Arnold", "OpenPBR", "Stingray"
 - **shadingOption**: Controls how shading data is handled (default: "Use Normal Data")
-    *Valid values:* 
-    - "Use Normal Data", 
-    - "Harden Edge", 
-    - "Soften Edge"
+  _Valid values:_
+  - "Use Normal Data",
+  - "Harden Edge",
+  - "Soften Edge"
 - **importAO**: Whether to import Ambient Occlusion from ORM texture (R channel) and multiply with base color (default: 0/false)
 - **importMaterials**: Whether to import materials/shaders during import (default: 1/true)
 - **mergeVertices**: Whether to merge vertices (default: 0/false)
 - **unitScale**: Specifies the unit scale factor for imported geometry (default: "Auto")
-    *Valid values:* "Auto", "1.0", "100.0"
-    - "Auto": Automatically determines the appropriate scale based on the file
-    - "1.0": Applies a unit scale of 1.0, useful for scaling down assets from sources like Sketchfab that may have larger asset scales
-    - "100.0": Applies a unit scale of 100.0 for scaling up geometry
+  _Valid values:_ "Auto", "1.0", "100.0"
+  - "Auto": Automatically determines the appropriate scale based on the file
+  - "1.0": Applies a unit scale of 1.0, useful for scaling down assets from sources like Sketchfab that may have larger asset scales
+  - "100.0": Applies a unit scale of 100.0 for scaling up geometry
 - **importSkinBinding**: Whether to import skin binding (skinCluster creation) during import (default: 1/true)
 - **importBlendshapes**: Imports blendshape targets (default: 1/true)
-- **animationFPS**: Frame rate for animation import (default: 30)
+- **animationFPS**: Frame rate for animation import (default: 24)
 - **importAnimations**: Whether to import TRS animations from glTF file as Maya keyframes (default: 1/true)
 - **importBlendshapeAnimations**: Imports blendshape weight keyframes (default: 1/true)
 - **openTimeEditor**: Whether to open the Time Editor after import (default: 0/false)
@@ -52,11 +52,14 @@ The plugin supports various import options that can be specified in the `options
 - **useRelativePath**: Whether to use relative paths for textures (default: 0/false)
 
 #### Options String Format
+
 Options are specified as semicolon-separated key-value pairs: `"key1=value1;key2=value2;key3=value3"`
 
 #### Example with Multiple Options
+
 ```mel
-file -import -type "glTF2" -namespace "FILE_NAME" -options "shaderType=Standard Surface;mergeVertices=0;unitScale=Auto;shadingOption=Use Normal Data;useRelativePath=0;openTimeEditor=0;importAnimations=1;importBlendshapeAnimations=0;importAO=0;importMaterials=1;importSkinBinding=1;importBlendshapes=1;focusView=1;animate=0;animationFPS=30;" "PATH_TO_GLTF";
+file -import -type "glTF2.0 Import" -namespace "FILE_NAME" -options "shaderType=Standard Surface;mergeVertices=0;unitScale=Auto;shadingOption=Use Normal Data;useRelativePath=0;openTimeEditor=0;importAnimations=1;importBlendshapeAnimations=0;importAO=0;importMaterials=1;importSkinBinding=1;importBlendshapes=1;focusView=1;animate=0;animationFPS=30;" "PATH_TO_GLTF";
+file -import -type "glTF2.0 Import" -namespace "FILE_NAME" -options "shaderType=Standard Surface;mergeVertices=0;unitScale=Auto;shadingOption=Use Normal Data;useRelativePath=0;openTimeEditor=0;importAnimations=1;importBlendshapeAnimations=0;importAO=0;importMaterials=1;importSkinBinding=1;importBlendshapes=1;focusView=1;animate=0;animationFPS=24;" "PATH_TO_GLTF";
 ```
 
 ### Integration with Custom Tools

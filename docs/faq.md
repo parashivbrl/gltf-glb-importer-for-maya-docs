@@ -3,10 +3,17 @@
 ## General Questions
 
 ??? question "What is the glTF Importer for Maya?"
-    The glTF Importer for Maya is a plugin that allows you to import glTF (GL Transmission Format) and glb (Binary glTF) files directly into Autodesk Maya. This enables seamless integration of 3D assets that follow the glTF standard into your Maya workflow.
+    The glTF Importer for Maya is a plugin that allows you to import glTF (GL Transmission Format) and glb (Binary glTF) files directly into Autodesk Maya.
+
+    It enables seamless integration of 3D assets that follow the glTF standard into your Maya workflow.
 
 ??? question "What versions of Maya are supported?"
-    The plugin supports **Maya 2022 or later**. For Maya 2024 and earlier versions, you'll need to install numpy separately. Maya 2025+ includes numpy by default. See the [Dependencies Installation](dependencies_installation.md) page for detailed requirements.
+    The plugin supports **Maya 2022 or later**.
+
+    - **Maya 2024 and earlier**: Install `numpy` separately
+    - **Maya 2025+**: `numpy` is included by default
+
+    See [Dependencies Installation](dependencies_installation.md) for the full requirements.
 
 ## Installation Questions
 
@@ -19,41 +26,72 @@
     4. Following the step-by-step instructions in [Plugin Installation](plugin_installation.md)
 
 ??? question "Do I need to install additional dependencies?"
-    **For Maya 2024 and earlier versions**: Yes, you need to install numpy. **For Maya 2025+**: No additional dependencies are required as numpy is included by default. Please follow the complete guide in [Dependencies Installation](dependencies_installation.md) for installation instructions.
+    - **Maya 2024 and earlier**: Yes, you need to install `numpy`.
+    - **Maya 2025+**: No additional dependencies are required as `numpy` is included by default.
+
+    Follow [Dependencies Installation](dependencies_installation.md) for step-by-step instructions.
 
 ??? question "Where should I install the plugin files?"
-    Extract the downloaded zip and copy the contents of the `scripts` folder to your user-specific Maya `.../scripts` directory, and the contents of the `plug-ins` folder to the matching `.../plug-ins` directory (create it if it does not exist). Refer to the platform-specific steps in [Plugin Installation](plugin_installation.md) for exact paths on Windows, macOS, and Linux.
+    Extract the downloaded zip and copy:
+
+    - The contents of the `scripts` folder to your user-specific Maya `.../scripts` directory
+    - The contents of the `plug-ins` folder to the matching `.../plug-ins` directory (create it if it does not exist)
+
+    Refer to [Plugin Installation](plugin_installation.md) for exact paths on Windows, macOS, and Linux.
 
 ## Import Questions
 
 ??? question "What file formats are supported?"
     The plugin supports both:
-    
+
     - **.gltf** files (JSON format with external assets)
     - **.glb** files (binary format with embedded assets)
+
+??? question "Is Draco (KHR_draco_mesh_compression) supported?"
+    Draco mesh compression decoding is supported on **Windows only**.
+
+    On macOS/Linux, files that use `KHR_draco_mesh_compression` may fail to import or import without geometry. Re-export the asset without Draco compression (or provide an uncompressed glTF/GLB) to import successfully.
+
+??? question "What file type should I choose in Maya's Import dialog?"
+    In Maya's native Import dialog, choose the file type **glTF2.0 Import**.
+
+    If you don't see it, follow [Plugin Installation](plugin_installation.md) and confirm the plugin is loaded.
 
 ??? question "Why isn't my glTF/glb file importing correctly?"
     Several factors can affect import success:
 
-    1. **File compatibility**: Check [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) - Note that Sketchfab auto-generated assets may require preprocessing
-    2. **File format issues**: Ensure your file follows glTF 2.0 specifications
+    1. **File compatibility**: Check [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) (Sketchfab auto-generated assets may require preprocessing)
+    2. **File format issues**: Ensure your file follows the glTF 2.0 specification
     3. **Missing textures**: Verify all referenced textures are available
     4. **Large file size**: Very large files may require specific settings
     5. **Asset source**: Assets from Khronos Sample Assets, Maya/Babylon exporter, or Blender/glTF 2.0 exporter typically work best
-    6. **Scale issues**: If imported assets appear too large (common with Sketchfab assets), use the **Unit Scale** option in [Geometry Options](geometry_options.md) and select **1.0** to scale down the geometry
+    6. **Scale issues**: If imported assets appear too large (common with Sketchfab assets), use **Unit Scale** in [Geometry Options](geometry_options.md) and select **1.0**
 
 ??? question "Can I import animations from glTF/glb files?"
-    Yes! The plugin supports animation import including skeletal animations, transform-based animations, and morph targets. Configure your animation settings using the [Animation Settings](animation_settings.md) options before importing. You can enable "Open Time Editor Window" to automatically open Maya's Time Editor after import for immediate access to animation clips. You can also use the [Show Animation Clips](show_animation_clips.md) feature to manage multiple animation clips, which are automatically organized in Maya's Time Editor.
+    Yes. The plugin supports skeletal animations, transform-based animations, and morph targets.
+
+    - Configure options in [Animation Settings](animation_settings.md) before importing
+    - Default animation FPS is **24 fps (Film)**
+    - Enable **Open Time Editor Window** to open Maya's Time Editor automatically after import
+    - Use [Show Animation Clips](show_animation_clips.md) to manage multiple clips (organized in the Time Editor)
 
 ??? question "How do I handle material variants?"
-    Material variants are supported through the [Show Material Variants](show_material_variants.md) feature. This allows you to switch between different material configurations defined in your glTF file.
+    Material variants are supported through [Show Material Variants](show_material_variants.md).
+
+    This lets you switch between different material configurations defined in your glTF file.
+
+??? question "Can the Material Variants / Animation Clips UI open automatically?"
+    Yes. In the glTF2.0 menu, open the **Material Variants Animation Clips** options dialog (the option box next to the menu item), then:
+
+    - Enable **Show UI automatically when Maya starts** to open the UIs on startup
+    - Use **Dock UI by default** to control whether they open docked or as floating windows
 
 ??? question "My imported asset from Sketchfab appears too large or has deformation issues"
     Sketchfab assets, especially auto-generated ones, may have scale or deformation issues. Try these solutions:
-    
-    1. **Scale issues**: Use the **Unit Scale** option in [Geometry Options](geometry_options.md) and select **1.0** to scale down the geometry
-    2. **Deformation issues**: Enable **Use Exact Inverse Bind Matrices** in [Geometry Options](geometry_options.md) (requires **Import Skin Binding** to be enabled)
-    3. **Import only static geometry**: Disable **Import Skin Binding**, **Import Blendshapes**, and **Import Animations** all at once to import only static meshes and materials, avoiding potential deformation or animation issues
+
+    1. **Scale issues**: Use **Unit Scale** in [Geometry Options](geometry_options.md) and select **1.0**
+    2. **Deformation issues**: Ensure **Import Skin Binding** is enabled (inverse bind matrices are handled automatically during import)
+    3. **Import only static geometry**: Disable **Import Skin Binding**, **Import Blendshapes**, and **Import Animations** together
     4. For more detailed workarounds, see [Asset Compatibility and Workarounds](compatibility_and_workarounds.md)
 
 ## Material Questions
@@ -70,19 +108,19 @@
 
 ??? question "Can I extract textures during import?"
     The importer handles textures differently depending on the file type:
-    
+
     - **GLB files**: The importer needs to extract and save textures using the [Image Extraction](image_extraction.md) feature because textures are embedded in the binary file. By default (when "Use Relative Path" is unchecked), textures are saved to your Maya project's sourceimages directory (e.g., `C:\Users\{User name}\Documents\maya\projects\default\sourceimages\gltf_textures`). When "Use Relative Path" is enabled, textures are saved relative to the GLB file location, which is useful for portable project structures.
-    
+
     - **GLTF files**: Extraction is not needed because textures are external files. The texture image paths will be set relative to the GLTF file location automatically.
 
 ??? question "How do I handle PBR materials?"
     The plugin converts PBR (Physically Based Rendering) materials to Maya-compatible materials. You can choose from multiple shader types:
-    
+
     - **Standard Surface** (default): Best for general use with Arnold and other renderers
     - **Arnold**: Optimized for Arnold renderer workflows
     - **OpenPBR** (Maya 2025+): Industry-standard PBR shader, though Arnold may not render all properties correctly
     - **Stingray**: Legacy option, only supports basic material properties (BaseColor, ORM, Normal, Emissive)
-    
+
     Additionally, you can enable "Import Ambient Occlusion" to import AO from ORM texture (R channel) and multiply it with base color for enhanced depth and shadow detail. Some manual adjustment may be required for optimal results depending on your chosen shader type.
 
 ## Performance Questions
@@ -108,7 +146,6 @@
 
     **For Material Optimization:**
     - Disable "Import Materials" in [Material Settings](material_settings.md) if you only need geometry and plan to assign materials manually later
-
 
     These optimizations are particularly effective for large files, complex rigged assets, or when you only need specific aspects of the imported content.
 
@@ -151,16 +188,18 @@
     3. **Viewport Renderer**: Start **Arnold** in the viewport to see the render result, which may display the geometry correctly
 
     Additionally, to see advanced material properties like **sheen**, **iridescence**, **clearcoat**, **transmission**, and other PBR features, you need to:
-    
+
     - Start **Arnold** in the viewport renderer, or
     - Take a render using Arnold
-    
+
     Maya's default viewport renderer may not display all advanced material properties correctly, so using Arnold is necessary to visualize these effects.
 
 ## Advanced Usage
 
 ??? question "Can I batch import multiple files?"
-    The plugin focuses on individual file import. For batch operations, you can use Maya's scripting capabilities with the programmatic interface. See [Technical Details](technical_details.md) for MEL and Python command examples.
+    The plugin focuses on individual file import. For batch operations, you can use Maya's scripting capabilities with the programmatic interface.
+
+    See [Technical Details](technical_details.md) for MEL and Python command examples.
 
 ??? question "How do I handle very large glTF scenes?"
     For large scenes:
@@ -178,21 +217,28 @@
     2. **Animation clips**: If your file has animation clips, you'll need to bake them from Time Editor to scene animation before exporting. See [Asset Compatibility and Workarounds](compatibility_and_workarounds.md) for the complete round-trip workflow
     3. **Material limitations**: Babylon only supports basic material properties with Stingray shader and doesn't support glTF extensions with Stingray
 
-??? question "What's the difference between 'No merging' and 'Merge Vertices' geometry options?"
-    - **No merging** (default): Preserves original mesh structure, keeps components separate along UV seams, maintains material assignments per mesh
-    - **Merge Vertices**: Automatically combines vertices that share the same position, can reduce geometry complexity but may affect color sets
+??? question "What's the difference between 'No merging' and 'Merge Vertices'?"
+    - **No merging** (default): Preserves original mesh structure and keeps components separate along UV seams
+    - **Merge Vertices**: Combines vertices that share the same position; can reduce geometry complexity but may change how some edge cases behave
 
 ??? question "Can I modify import settings after import?"
-    Import settings apply during the import process. To change settings, you'll need to re-import the file with new configuration options. However, you can modify materials, apply material variants using [Show Material Variants](show_material_variants.md), and manage animation clips using [Show Animation Clips](show_animation_clips.md) after import.
+    Import settings apply during the import process. To change settings, re-import the file with the new configuration.
+
+    After import you can still:
+    - Modify materials
+    - Apply material variants via [Show Material Variants](show_material_variants.md)
+    - Manage animation clips via [Show Animation Clips](show_animation_clips.md)
 
 ## Getting Help
 
 ??? question "Where can I find more technical information?"
-    Detailed technical information is available in the [Technical Details](technical_details.md) section, including programmatic import using MEL and Python commands with all available import options.
+    Detailed technical information is available in [Technical Details](technical_details.md), including programmatic import using MEL and Python commands with all available import options.
 
 ??? question "How do I report bugs or request features?"
-    You can report bugs, request features, share suggestions, view announcements, and get support by joining the [Discord server](https://discord.gg/dtSxPaQ2). When reporting issues, please include:
-    
+    You can report bugs, request features, share suggestions, view announcements, and get support by joining the [Discord server](https://discord.gg/dtSxPaQ2).
+
+    When reporting issues, please include:
+
     1. Maya version and operating system
     2. Asset source (Sketchfab, custom export, etc.)
     3. File size and complexity details
@@ -202,8 +248,10 @@
     7. Steps to reproduce the issue
 
 ??? question "Are there example files I can use for testing?"
-    The [Khronos glTF Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) provides official test assets that work well with the plugin. These are recommended for testing your installation and understanding the import process. Assets exported from Maya using Babylon exporter or from Blender using the built-in glTF 2.0 addon also work reliably.
+    The [Khronos glTF Sample Assets repository](https://github.com/KhronosGroup/glTF-Sample-Assets) provides official test assets that work well with the plugin.
+
+    These are recommended for testing your installation and understanding the import process. Assets exported from Maya using Babylon exporter or from Blender using the built-in glTF 2.0 addon also work reliably.
 
 ---
 
-*If your question isn't answered here, please check the other documentation pages or join the [Discord server](https://discord.gg/dtSxPaQ2) for additional support.* 
+_If your question isn't answered here, please check the other documentation pages or join the [Discord server](https://discord.gg/dtSxPaQ2) for additional support._

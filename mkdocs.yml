@@ -52,6 +52,7 @@ theme:
     - content.code.copy
 
 markdown_extensions:
+  - admonition
   - attr_list
   - pymdownx.details
   - pymdownx.superfences
@@ -83,7 +84,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/parashivbrl
       name: View on GitHub
-  
+
   generator: false
 
 plugins:

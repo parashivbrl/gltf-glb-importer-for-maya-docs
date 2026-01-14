@@ -5,12 +5,12 @@ When importing GLTF/GLB files, you can configure animation settings to control h
 ![Screenshot](img/image_animation_settings.png)
 
 > **Note:** Before previewing imported animation, set Maya's Time Slider playback speed to **Real-time** (`Playback Speed > Real-time`) by **Right clicking** on the **Time slider**. The other options—**Play Every Frame, Free** and **Play Every Frame, Max Real-time**—ignore the FPS chosen below and can make animation appear too fast or too slow.
-![Screenshot](img/image_animation_settings_playback_speed.png)
+> ![Screenshot](img/image_animation_settings_playback_speed.png)
 
 ## Animation FPS
 
 - Choose the playback rate for imported animations from the dropdown
-- Default is **30 fps (NTSC)**, but presets such as 15 fps (Game), 24 fps (Film), 25 fps (PAL), 48 fps (Show), 50 fps (PAL Field), and 60 fps (NTSC Field) are available
+- Default is **24 fps (Film)**, but presets such as 15 fps (Game), 25 fps (PAL), 30 fps (NTSC), 48 fps (Show), 50 fps (PAL Field), and 60 fps (NTSC Field) are available
 - **24 fps** and **30 fps** cover most use cases
 - Use this setting to match the project frame rate before importing
 
@@ -21,12 +21,15 @@ When importing GLTF/GLB files, you can configure animation settings to control h
 - Helpful to leave off when you plan to author new animation in Maya and only use the imported geometry
 
 ## Import Blendshape Animations
+![Screenshot](img/image_blendshape_animations.png)
 
 - When enabled (default), imports blendshape weight keyframes from the GLTF/GLB file
 - Required for facial animation or any deformation driven by blendshape curves
 - Disable if you only need static blendshape targets without animation to reduce scene keyframe data
 
 ## Open Time Editor Window
+
+![Screenshot](img/image_time_editor.png)
 
 - When enabled, launches the Maya Time Editor immediately after import so you can inspect and tweak the new animation clips
 - Helpful when you expect to edit or retime the imported animation right away

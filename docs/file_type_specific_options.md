@@ -2,7 +2,7 @@
 
 The right side of the import dialog contains various import settings organized into collapsible sections. Here we focus on the **File Type Specific Options** which provide specialized controls for glTF/glb imports.
 
-These options are specific to the importer in the File Type Specific Options section, available only when the File Type "gltf2" is selected from the dropdown in the import dialog.
+These options are specific to the importer in the File Type Specific Options section, available only when the File Type "glTF2.0 Import" is selected from the dropdown in the import dialog.
 
 ![Screenshot](img/image_file_specific_options.png)
 
@@ -24,14 +24,13 @@ These options are specific to the importer in the File Type Specific Options sec
 - **No merging**: Discontinuous geometry along the UV boundary/seams (default option)
 - **Merge Vertices**: Combines duplicate vertices
 - **Import Skin Binding**: Imports skin binding data from the GLB/GLTF file (enabled by default)
-- **Use Exact Inverse Bind Matrices**: Uses exact inverse bind matrices for auto-generated assets from platforms like Sketchfab
 - **Import Blendshapes**: Imports blendshape targets from the GLB/GLTF file (enabled by default)
 
 ---
 
 ### Animation Settings
 
-- **Animation FPS**: Set the frame rate for imported animations (default: **"30 fps (NTSC)"**)
+- **Animation FPS**: Set the frame rate for imported animations (default: **"24 fps (Film)"**)
 - **Import Animations**: Creates Maya keyframes for translation, rotation, and scale animations
 - **Import Blendshape Animations**: Imports keyframes for blendshape weights (enabled by default)
 - **Open Time Editor Window**: Opens Time Editor window for animation playback and editing
