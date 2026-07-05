@@ -1,0 +1,220 @@
+/* Custom CSS for enhanced readability and visual hierarchy */
+
+/* Text justification */
+.md-content__inner p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+}
+
+/* Enhanced list styling */
+.md-content__inner li {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.6;
+    margin-bottom: 0.5em;
+}
+
+.md-content__inner ul {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+}
+
+/* Enhanced heading styles with better spacing and visual hierarchy */
+.md-content__inner h1 {
+    text-align: left;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 3px solid var(--md-primary-fg-color);
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.md-content__inner h2 {
+    text-align: left;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid var(--md-primary-fg-color--light);
+    font-size: 1.8em;
+    font-weight: 600;
+    position: relative;
+}
+
+.md-content__inner h2:before {
+    content: '';
+    position: absolute;
+    left: -1em;
+    top: 0.3em;
+    width: 0.3em;
+    height: 1.2em;
+    background: var(--md-primary-fg-color);
+    border-radius: 2px;
+}
+
+/* Default h3 styling - completely clean */
+.md-content__inner h3 {
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--md-primary-fg-color);
+}
+
+/* Special styling for installation page h3 sections with connected content */
+.md-content__inner h3 + ol {
+    background: var(--md-default-bg-color--light);
+    padding: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    border: 2px solid var(--md-primary-fg-color--light);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.md-content__inner h4,
+.md-content__inner h5,
+.md-content__inner h6 {
+    text-align: left;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    font-weight: 600;
+}
+
+/* Enhanced code blocks */
+.md-content__inner pre {
+    margin: 1.5em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-content__inner code {
+    padding: 0.2em 0.4em;
+    font-size: 0.9em;
+    border-radius: 4px;
+    background-color: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Enhanced blockquotes/notes */
+.md-content__inner blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 6px solid var(--md-accent-fg-color);
+    background-color: var(--md-default-bg-color--light);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-content__inner blockquote p {
+    margin-bottom: 0.5em;
+    font-style: italic;
+}
+
+.md-content__inner blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Enhanced step numbering for ordered lists */
+/* Use a more specific approach - target only the main steps */
+.md-content__inner ol {
+    margin-bottom: 1.5em;
+}
+
+/* Target only the installation section ordered lists */
+.md-content__inner h3 + ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Style only the direct children (main steps 1-6) */
+.md-content__inner h3 + ol > li:nth-child(-n+6) {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3em;
+    margin-bottom: 1.2em;
+    background: var(--md-default-bg-color--light);
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-right: 1em;
+    border-radius: 8px;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    list-style: none;
+}
+
+.md-content__inner h3 + ol > li:nth-child(-n+6):before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0.8em;
+    top: 0.8em;
+    background: var(--md-primary-fg-color);
+    color: white;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.md-content__inner h3 + ol > li:nth-child(n+7):before {
+    display: none !important;
+}
+
+/* Style nested unordered lists to stay within the parent container */
+.md-content__inner h3 + ol > li:nth-child(-n+6) ul {
+    list-style: disc;
+    padding-left: 1.5em;
+    margin-top: 0.8em;
+    margin-bottom: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.md-content__inner h3 + ol > li:nth-child(-n+6) ul li {
+    list-style: disc;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.3em 0;
+    margin-bottom: 0.3em;
+    position: static;
+    padding-left: 0;
+    border-radius: 0;
+}
+
+/* Strong/bold text enhancement */
+.md-content__inner strong {
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+}
+
+/* Section dividers */
+.md-content__inner hr {
+    display: none;
+}
+
+/* Enhanced table styling if any */
+.md-content__inner table {
+    margin: 1.5em 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some spacing after sections */
+.md-content__inner > *:not(h1):not(h2):not(h3) + h2 {
+    margin-top: 3em;
+}
+
+.md-content__inner > *:not(h1):not(h2):not(h3) + h3 {
+    margin-top: 2.5em;
+} 
